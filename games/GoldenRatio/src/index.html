@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Golden Ratio</title>
+	
+	<link rel="stylesheet" href="../css/mystyle.css" type="text/css" />
+	<link rel="stylesheet" href="../css/slider.css" />
+	<link rel="stylesheet" href="../css/jquery-ui-1.8.20.custom.css" />
+	<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript" src="../../../libs/jquery.js"></script>
+	<script type="text/javascript" src="../../../libs/parameterPassing.js"></script>
+	<script type="text/javascript" src="../libs/jquery-ui-1.8.20.custom.min.js"></script>
+	<script type="text/javascript" src="../../../libs/jquery-ui-touch-punch.js"></script>
+	<script type="text/javascript" src="../libs/myscript.js"></script>
+</head>
+
+<body>
+	<div id="mycanvas0" class="mycanvas">  <!-- default one which shows sideicons only -->
+		<div id="c0_sideicons">
+			<img id="c0_sideico1" src="../assets/logo1.png" />
+			<img id="c0_sideico2" src="../assets/logo2.png" />
+			<img id="c0_sideico3" src="../assets/logo3.jpg" />
+			<img id="c0_sideico4" src="../assets/logo4.png" />
+		</div>
+		
+		<div id="text_disp" align="center">
+			<h1>Click on the icon to do <br/>the related activity.</h1>
+		</div>
+	</div>
+
+	<div id="mycanvas1" class="mycanvas">
+		<div id="sideicons">
+			<img id="sideico1" src="../assets/logo1.png" />
+			<img id="sideico2" src="../assets/logo2.png" />
+			<img id="sideico3" src="../assets/logo3.jpg" />
+			<img id="sideico4" src="../assets/logo4.png" />
+		</div>
+		<div id="c1_h1" align="center">
+			<h2><br/>Let us start by doing an activity</h2>
+		</div>
+		<div id="c1_h2" align="center">
+			<h3>Draw a rectangle which looks attractive <br/><i>(Click on the slider to change the length and breadth and then press Submit.)</i></h3>
+		</div>
+		<div id="c1_canvas_wrap" align="center">
+			<div id="rectang" align="center"></div>
+		</div>
+		<br/><br/>
+		
+		<div id="slider_wrap">
+			<div class="slider_marks">|</div>
+			<div class="slider_marks">|</div>
+			<div class="slider_marks">|</div>
+			<div class="slider_marks">|</div>
+			<div class="slider_marks">|</div>
+			<div class="slider_marks">|</div>
+			<div class="slider_marks">|</div>
+			<div class="slider_marks">|</div>
+			<div class="slider_marks">|</div>
+			<div class="lastSliderMark">|</div><br/>
+			<div id="c1_slider">
+				
+			</div>
+			<div class="slider_marks">|</div>
+			<div class="slider_marks">|</div>
+			<div class="slider_marks">|</div>
+			<div class="slider_marks">|</div>
+			<div class="slider_marks">|</div>
+			<div class="slider_marks">|</div>
+			<div class="slider_marks">|</div>
+			<div class="slider_marks">|</div>
+			<div class="slider_marks">|</div>
+			<div class="lastSliderMark">|</div><br/>
+		</div>
+		<div id="c1_bottom">
+			<div id="c1_prompt">
+				<button type="submit" class="prompt">
+					<span>Good. Let's<br/>learn more.</span>
+				</button>
+			</div>
+			<br/><br/>
+			<div id="c1_submit">
+				<button id="c1_link" onclick="level1()" type="submit" class="norm_button">
+					<span id="c1_next">SUBMIT</span>
+				</button>
+			</div>
+		</div>
+		
+		<div id="level3_text" align="center">
+			<h1>Click on the icons to do the related activity.</h1>
+		</div>
+	</div>
+	
+	<div id="mycanvas2" class="mycanvas">
+		<div id="c2_sideicon">
+			<img src="../assets/logo1.png" height="120" width="120" />
+		</div>
+		<div id="c2_h1" align="center">
+			<h1><br/>The Vitruvian Man</h1>
+		</div>
+		<div id="c2_pic">
+			<img src="../assets/pic1.png" height="270" width="270" />
+		</div>
+		<div id="c2_right">
+			<br/><br/>
+			<div>
+				<p>The Vitruvian Man was painted by Leonardo Da Vinci - inspired by the work of ancient Roman architect <b><i>Vitruvius</i></b>, who described human body as a system of proportions.</p>
+				<p>It has been proven that the painting of The Vitruvian Man, by Leonardo Da Vinci shows the symmetry of the human body and was made to study the proportions of the male human body.</p>
+			</div><br/><br/>
+			<div align="center">
+				<a href="javascript:level4();">
+					<button type="submit" class="norm_button">
+						<span>HOW??</span>
+					</button>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="mycanvas3" class="mycanvas">
+		<div id="c3_cloud" align="center">
+			<p>Drag the lines to measure.</p>
+		</div>
+		<div id="c3_sideicon">
+			<img src="../assets/logo1.png" height="120" width="120" />
+		</div>
+		<div id="c3_h1" align="center">
+			<h1><br/>The Vitruvian Man</h1>
+		</div>
+		<div id="c3_pics">
+			<img src="../assets/pic1.png" height="240" />
+			<img id="c3_pic2" src="../assets/pic2.png" height="240" />
+		</div>
+		
+		<div id="hl1_wrap" class="line_wrap">
+			<div id="hl1" class="line">
+			</div>
+		</div>
+		
+		<div id="hl2_wrap" class="line_wrap">
+			<div id="hl2" class="line">
+			</div>
+		</div>
+		
+		<div id="dist12">
+			165
+		</div>
+		
+		<div id="vl1_wrap" class="vline_wrap">
+			<div id="vl1" class="vline">
+			</div>
+		</div>
+		
+		<div id="vl2_wrap" class="vline_wrap">
+			<div id="vl2" class="vline">
+			</div>
+		</div>
+		
+		<div id="distv12">
+			170
+		</div>
+		
+		<div id="c3_bottom">
+			<div id="c3_calc">
+			</div>
+			
+			<div id="c3_inp">
+				Radius = <input id="c3_inp1" type="text" maxlength="5" /> units<br/>
+				Square side = <input id="c3_inp2" type="text" maxlength="5" /> units<br/><br/>
+				<b>Square side : Radius = </b> <input id="c3_ratio" maxlength="5" type="text" /><br/><br/>
+				<button id="c3_prompt" type="submit" class="prompt">
+					<span>That's right!!<br/>Note the ratio</span>
+				</button><br/>
+				<a id="c3_link" href="javascript:level5();">
+					<button type="submit" class="norm_button">
+						<span id="c3_next">SUBMIT</span>
+					</button>
+				</a>
+			</div>
+			
+			<div id="c3_buttons">
+				<div id="grid_button">
+					<a href="javascript:toggleLine();">
+					<button type="submit" class="norm_button">
+						<span>GRID</span>
+					</button>
+					</a>
+					(Click to find the measures.)
+				</div><br/>
+				
+				<div id="calc_button">
+					<a href="javascript:toggleCalc();">
+					<button type="submit" class="norm_button">
+						<span>CALCULATOR</span>
+					</button>
+					</a><br/>
+					(Click to use a calculator.)
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="mycanvas4" class="mycanvas">
+	</div>
+	<div id="mycanvas5" class="mycanvas">
+	</div>
+	<div id="mycanvas6" class="mycanvas">
+	</div>
+	<div id="mycanvas7" class="mycanvas">
+	</div>
+	<div id="mycanvas8" class="mycanvas">
+	</div>
+	<div id="mycanvas9" class="mycanvas">
+	</div>
+	<div id="mycanvas10" class="mycanvas">
+	</div>
+	<div id="mycanvas11" class="mycanvas">
+	</div>
+	<div id="mycanvas12" class="mycanvas">
+	</div>
+	<div id="mycanvas14" class="mycanvas">
+	</div>
+	<div id="mycanvas15" class="mycanvas">
+	</div>
+	<div id="mycanvas16" class="mycanvas">
+	</div>
+	
+	<script type="text/javascript">
+		$(function() {
+			$("#hl1_wrap").draggable({axis:"y", containment: [0,150,0,420], drag: function(event,ui) { move(); }, stop: function(event,ui) { move(); }, cursor:"crosshair"});
+			$("#hl2_wrap").draggable({axis:"y", containment: [0,150,0,420], drag: function(event,ui) { move(); }, stop: function(event,ui) { move(); }, cursor:"crosshair"});
+			
+			$("#vl1_wrap").draggable({axis:"x", containment: [390,0,650,0], drag: function(event,ui) { vert_move(); }, stop: function(event,ui) { vert_move(); }, cursor:"crosshair"});
+			$("#vl2_wrap").draggable({axis:"x", containment: [390,0,650,0], drag: function(event,ui) { vert_move(); }, stop: function(event,ui) { vert_move(); }, cursor:"crosshair"});
+		});
+	</script>
+	<script type="text/javascript" src="../../../libs/animate.min.js"></script>
+	<script type="text/javascript" src="../libs/arc.js"></script>
+</body>
+</html>

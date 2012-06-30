@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Choose the Best Deal</title>
+	
+	<link rel="stylesheet" href="../css/mystyle.css" type="text/css" media="all" />
+	
+	<script src="../../../libs/loadxmldoc.js"></script>
+	<script src="../../../libs/jquery.js"></script>
+	<script src="../../../libs/parameterPassing.js"></script>
+	<script src="../libs/jquery.maphilight.js"></script>
+	<script src="../libs/myscript.js"></script>
+	<script>
+		loadXML('data.xml', function() { onXMLload(); });
+	</script>
+</head>
+
+<body>
+<div id="mainBody">
+	<img id="frontpage_bg" class="map" alt="Loading image for choosing shop..." width="800" height="600" usemap="#frontpage_bgMap" />
+	<map name="frontpage_bgMap">
+		<area shape="rect" coords="27,212,245,380" href="javascript:loadRules('1');">
+		<area shape="rect" coords="264,211,483,380" href="javascript:loadRules('2');">
+		<area shape="rect" coords="500,213,716,377" href="javascript:loadRules('3');">
+	</map>
+	<div id="overlay1">
+	</div>
+	<div id="overlay2">
+	</div>
+	<div id="overlay3">
+	</div>
+</div>
+
+<div id="gameRules">
+	<div id="rules_content">
+		<ol>
+			<li><script>document.write(instArr['i201']);</script></li>
+			<li><script>document.write(instArr['i202']);</script></li>
+			<li><script>document.write(instArr['i203']);</script></li>
+			<li><script>document.write(instArr['i204']);</script></li>
+		</ol>
+		<p><script>document.write(instArr['i205shop'+sessionStorage.shop]);</script></p>
+		<p><script>document.write(instArr['i206']);</script></p>
+		<button type="submit" class="norm_button">
+			<span>GO...</span>
+		</button>
+	</div>
+</div>
+
+<div id="mainStage" class="occupyWhole">
+	<div id="gameParameters">
+		<div id="timeLeft" align="center">
+			<span id="timeText"><script>document.write(miscArr['timeText']);</script></span>
+			<span id="timerMin">05</span>:<span id="timerSec">00</span>
+		</div>
+		<div id="moneyLeft" align="center">
+			<span id="moneyText"><script>document.write(miscArr['moneyText']);</script></span><br/>
+			Rs. <span id="moneyCount"></span>
+		</div>
+	</div>
+	<div id="dealScreen">
+		<div id="dealHeader" align="center">
+			<p></p>
+		</div>
+		<div id="deal1" class="deal" align="center">
+			<div id="deal1txt" class="dealText">
+			
+			</div>
+			<div id="deal1img" class="dealImg">
+				<canvas id="imgDeal1" width="180" height="130"></canvas>
+			</div>
+		</div>
+		<div id="deal2" class="deal" align="center">
+			<div id="deal2txt" class="dealText">
+			
+			</div>
+			<div id="deal2img" class="dealImg">
+				<canvas id="imgDeal2" width="180" height="130"></canvas>
+			</div>
+		</div>
+		
+		<input type="hidden" id="deal1Amt" value="" />
+		<input type="hidden" id="deal2Amt" value="" />
+		<input type="hidden" id="dealCorrect" value="" />
+	</div>
+	<div id="helpName" align="center">
+		<h2><script>document.write(miscArr['helpText']);</script></h2>
+	</div>
+	<div id="help">
+	
+	</div>
+	<div id="helpDisplay" align="center">
+		
+	</div>
+	<div id="item">
+		<p id="itemHeader"></p>
+		<div class="eachItem">
+			<img src="../assets/uncheck.png" onclick="checkImg(this,1)" />
+			<p></p>
+		</div><br/>
+		<div class="eachItem">
+			<img src="../assets/uncheck.png" onclick="checkImg(this,2)" />
+			<p></p>
+		</div><br/>
+		<div class="eachItem">
+			<img src="../assets/uncheck.png" onclick="checkImg(this,3)" />
+			<p></p>
+		</div><br/>
+		<div class="eachItem">
+			<img src="../assets/uncheck.png" onclick="checkImg(this,4)" />
+			<p></p>
+		</div>
+	</div>
+	<div id="displayContent" align="center">
+		<div id="display">
+		
+		</div>
+		<div id="calc">
+			<form name="calc" id="calc_form" action="javascript:func();">
+				<table align="center" bgcolor="powderblue" cellpadding="1" cellspacing="2">
+					<tr>
+						<td>
+							<input size="14" value="" id="ans" name="ans" type="text" onkeydown="calcKey(window.event)">
+						</td>
+						<td align="center">
+							<input value=" C" name="clear" onClick="document.calc.ans.value=''; $('#roughWork').append('<br/>');" type="button">
+						</td>
+					</tr>
+				</table>
+
+				<table align="center" bgcolor="powderblue" cellpadding="2" cellspacing="2">
+					<tr>
+						<td align="center">
+							<input value=" 7 " name="seven" onClick="mycalc('7')" type="button">
+						</td>
+						<td align="center">
+							<input value=" 8 " name="eight" onClick="mycalc('8')" type="button">
+						</td>
+						<td align="center">
+							<input value=" 9 " name="nine" onClick="mycalc('9')" type="button">
+						</td>
+						<td align="center">
+							<input value=" / " name="div" onClick="mycalc('/')" type="button">
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<input value=" 4 " name="four" onClick="mycalc('4')" type="button">
+						</td>
+						<td align="center">
+							<input value=" 5 " name="five" onClick="mycalc('5')" type="button">
+						</td>
+						<td align="center">
+							<input value=" 6 " name="six" onClick="mycalc('6')" type="button">
+						</td>
+						<td align="center">
+							<input value=" * " name="mult" onClick="mycalc('*')" type="button">
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<input value=" 1 " name="one" onClick="mycalc('1')" type="button">
+						</td>
+						<td align="center">
+							<input value=" 2 " name="two" onClick="mycalc('2')" type="button">
+						</td>
+						<td align="center">
+							<input value=" 3 " name="three" onClick="mycalc('3')" type="button">
+						</td>
+						<td align="center">
+							<input value=" - " name="minus" onClick="mycalc('-')" type="button">
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<input value=" 0 " name="zero" onClick="mycalc('0')" type="button">
+						</td>
+						<td align="center">
+							<input value=" . " name="decimal" onClick="mycalc('.')" type="button">
+						</td>
+						<td align="center">
+							<input value=" = " name="equal" onClick="func()" type="button">
+						</td>
+						<td align="center">
+							<input value=" + " name="add" onClick="mycalc('+')" type="button">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	<div id="rough">
+		<div id="calcIcon">
+			<p>Use Calculator</p>
+			<img src="../assets/calc.png" height="45" onclick="" />
+		</div>
+		<div id="roughWork">
+		</div>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function() {
+		setTimeout(loadImages(),1000);
+	});
+</script>
+<!-- <script src="../libs/snow.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,71 @@
+				<form name="calc" id="c3_calc_form" action="javascript:void 0;">
+					<table align="center" bgcolor="powderblue" cellpadding="1" cellspacing="2">
+						<tr>
+							<td>
+								<input size="14" value="" id="ans" name="ans" type="text" onkeydown="window.event.preventDefault()">
+							</td>
+							<td align="center">
+								<input value=" C" name="clear" onClick="document.calc.ans.value=''" type="button">
+							</td>
+						</tr>
+					</table>
+
+					<table align="center" bgcolor="powderblue" cellpadding="2" cellspacing="2">
+						<tr>
+							<td align="center">
+								<input value=" 7 " name="seven" onClick="mycalc('7')" type="button">
+							</td>
+							<td align="center">
+								<input value=" 8 " name="eight" onClick="mycalc('8')" type="button">
+							</td>
+							<td align="center">
+								<input value=" 9 " name="nine" onClick="mycalc('9')" type="button">
+							</td>
+							<td align="center">
+								<input value=" / " name="div" onClick="mycalc('/')" type="button">
+							</td>
+						</tr>
+						<tr>
+							<td align="center">
+								<input value=" 4 " name="four" onClick="mycalc('4')" type="button">
+							</td>
+							<td align="center">
+								<input value=" 5 " name="five" onClick="mycalc('5')" type="button">
+							</td>
+							<td align="center">
+								<input value=" 6 " name="six" onClick="mycalc('6')" type="button">
+							</td>
+							<td align="center">
+								<input value=" * " name="mult" onClick="mycalc('*')" type="button">
+							</td>
+						</tr>
+						<tr>
+							<td align="center">
+								<input value=" 1 " name="one" onClick="mycalc('1')" type="button">
+							</td>
+							<td align="center">
+								<input value=" 2 " name="two" onClick="mycalc('2')" type="button">
+							</td>
+							<td align="center">
+								<input value=" 3 " name="three" onClick="mycalc('3')" type="button">
+							</td>
+							<td align="center">
+								<input value=" - " name="minus" onClick="mycalc('-')" type="button">
+							</td>
+						</tr>
+						<tr>
+							<td align="center">
+								<input value=" 0 " name="zero" onClick="mycalc('0')" type="button">
+							</td>
+							<td align="center">
+								<input value=" . " name="decimal" onClick="mycalc('.')" type="button">
+							</td>
+							<td align="center">
+								<input value=" = " name="equal" onClick="func()" type="button">
+							</td>
+							<td align="center">
+								<input value=" + " name="add" onClick="mycalc('+')" type="button">
+							</td>
+						</tr>
+					</table>
+				</form>

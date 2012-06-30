@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+
+<!-- In the entire code, shop 1 means Camping Theme, 2 Grocery & 3 Picnic. Also items are also in the order shown in the game. -->
+<application name="BestDeal">
+
+	<english>
+		<questions>
+			<!-- s1i1d1 means shop 1, item 1, deal 1 -->
+			<!-- s1i1d1Val means value/cost of item 1, deal 1 in shop 1 -->
+			<que name="s1i1d1" text="1 Kg of potato chips&lt;br/&gt;MRP = Rs.200&lt;br/&gt;Offer: 10% discount" page="page3" voice="" />
+			<que name="s1i1d1Val" text="180" page="page3" voice="" />
+			<que name="s1i1d2" text="1 Kg of potato chips&lt;br/&gt;MRP = Rs.200&lt;br/&gt;Offer: 10% more" page="page3" voice="" />
+			<que name="s1i1d2Val" text="200" page="page3" voice="" />
+			<que name="s1i2d1" text="1 litre of Tropicana juice&lt;br/&gt;MRP = Rs.80&lt;br/&gt;Offer: 20% discount" page="page3" voice="" />
+			<que name="s1i2d1Val" text="128" page="page3" voice="" />
+			<que name="s1i2d2" text="2 litres of Tropicana juice&lt;br/&gt;MRP = Rs.200&lt;br/&gt;Offer: 25% discount" page="page3" voice="" />
+			<que name="s1i2d2Val" text="150" page="page3" voice="" />
+			<que name="s1i3d1" text="1 pack of battery&lt;br/&gt;MRP = Rs.50&lt;br/&gt;Offer: 50% discount" page="page3" voice="" />
+			<que name="s1i3d1Val" text="50" page="page3" voice="" />
+			<que name="s1i3d2" text="1 pack of battery&lt;br/&gt;MRP = Rs.50&lt;br/&gt;Offer: Buy 1 get 1 free" page="page3" voice="" />
+			<que name="s1i3d2Val" text="50" page="page3" voice="" />
+			<que name="s1i4d1" text="1 packet of paper plates&lt;br/&gt;MRP = Rs.40&lt;br/&gt;Offer: 15% discount" page="page3" voice="" />
+			<que name="s1i4d1Val" text="102" page="page3" voice="" />
+			<que name="s1i4d2" text="1 packet of paper plates&lt;br/&gt;MRP = Rs.50&lt;br/&gt;Offer: Buy 2 get 1 free" page="page3" voice="" />
+			<que name="s1i4d2Val" text="100" page="page3" voice="" />
+			
+			<que name="s2i1d1" text="1 packet of Maggi- 80gms&lt;br/&gt;MRP = Rs.10&lt;br/&gt;Offer: 25% discount" page="page3" voice="" />
+			<que name="s2i1d1Val" text="37.5" page="page3" voice="" />
+			<que name="s2i1d2" text="A pack of 4 Maggi- 320gms&lt;br/&gt;MRP = Rs.40&lt;br/&gt;Offer: 25% more" page="page3" voice="" />
+			<que name="s2i1d2Val" text="40" page="page3" voice="" />
+			<que name="s2i2d1" text="Tomato ketchup- 500ml&lt;br/&gt;MRP = Rs.60&lt;br/&gt;Offer: Buy 1 get 1 free" page="page3" voice="" />
+			<que name="s2i2d1Val" text="60" page="page3" voice="" />
+			<que name="s2i2d2" text="Tomato ketchup- 1L&lt;br/&gt;MRP = Rs.120&lt;br/&gt;Offer: 15% off" page="page3" voice="" />
+			<que name="s2i2d2Val" text="51" page="page3" voice="" />
+			<que name="s2i3d1" text="Kellogs cornflakes- 400gms&lt;br/&gt;MRP = Rs.75&lt;br/&gt;Offer: 25% extra" page="page3" voice="" />
+			<que name="s2i3d1Val" text="150" page="page3" voice="" />
+			<que name="s2i3d2" text="Kellogs cornflakes- 1kg&lt;br/&gt;MRP = Rs.175&lt;br/&gt;Offer: 20% off" page="page3" voice="" />
+			<que name="s2i3d2Val" text="140" page="page3" voice="" />
+			<que name="s2i4d1" text="ACT II popcorn- 1 packet&lt;br/&gt;MRP = Rs.10&lt;br/&gt;Offer: 10% off" page="page3" voice="" />
+			<que name="s2i4d1Val" text="27" page="page3" voice="" />
+			<que name="s2i4d2" text="ACT II popcorn- 3 packets&lt;br/&gt;MRP = Rs.30&lt;br/&gt;Offer: 10% off" page="page3" voice="" />
+			<que name="s2i4d2Val" text="27" page="page3" voice="" />
+			
+			<que name="s3i1d1" text="1 pack of UNO cards&lt;br/&gt;MRP = Rs.150&lt;br/&gt;Offer: 50% discount" page="page3" voice="" />
+			<que name="s3i1d1Val" text="150" page="page3" voice="" />
+			<que name="s3i1d2" text="1 pack of UNO cards&lt;br/&gt;MRP = Rs.150&lt;br/&gt;Offer: Buy 1 get 1 free" page="page3" voice="" />
+			<que name="s3i1d2Val" text="150" page="page3" voice="" />
+			<que name="s3i2d1" text="1 Frisbee&lt;br/&gt;MRP = Rs.50&lt;br/&gt;Offer: 20% discount" page="page3" voice="" />
+			<que name="s3i2d1Val" text="80" page="page3" voice="" />
+			<que name="s3i2d2" text="1 Frisbee&lt;br/&gt;MRP = Rs.60&lt;br/&gt;Offer: 25% discount" page="page3" voice="" />
+			<que name="s3i2d2Val" text="90" page="page3" voice="" />
+			<que name="s3i3d1" text="Pack of 3 tennis balls&lt;br/&gt;MRP = Rs.200&lt;br/&gt;Offer: 30% discount" page="page3" voice="" />
+			<que name="s3i3d1Val" text="140" page="page3" voice="" />
+			<que name="s3i3d2" text="1 tennis ball&lt;br/&gt;MRP = Rs.75&lt;br/&gt;Offer: Buy 2 get 1 free" page="page3" voice="" />
+			<que name="s3i3d2Val" text="150" page="page3" voice="" />
+			<que name="s3i4d1" text="Pack of 6 shuttlecocks&lt;br/&gt;MRP = Rs.200&lt;br/&gt;Offer: 40% discount" page="page3" voice="" />
+			<que name="s3i4d1Val" text="120" page="page3" voice="" />
+			<que name="s3i4d2" text="Pack of 3 shuttlecocks&lt;br/&gt;MRP = Rs.110&lt;br/&gt;Offer: 20% discount" page="page3" voice="" />
+			<que name="s3i4d2Val" text="176" page="page3" voice="" />
+		</questions>
+		
+		<prompts>
+			<!-- s1i1h means shop 1, item 1, help; ** is used as separator between various help prompts -->
+			<prompt name="correctAnsPrompt" text="COOL!! You seem to have selected the BEST DEAL!!&lt;br/&gt;Choose the next item to shop." page="page3" voice="" />
+			<prompt name="wrongAnsPrompt" text="OOPS!! You have not chosen the best deal.&lt;br/&gt;You have spent more money.&lt;br/&gt;Choose the next deal carefully.&lt;br/&gt;Click on the next item to shop." page="page3" voice="" />
+			<prompt name="lastCorrectAns" text="COOL!! You seem to have selected the BEST DEAL!!" page="page3" voice="" />
+			<prompt name="lastWrongAns" text="OOPS!! You have not chosen the best deal.&lt;br/&gt;You have spent more money." page="page3" voice="" />
+			<prompt name="bothCorrect" text="COOL!! You seem to have selected the BEST DEAL!! Did you notice that both the deals here are equally good? :) Choose the next item to shop." page="page3" voice="" />
+			<prompt name="noMoneyCorrect" text="You have chosen the right deal but there is not enough money left to shop. You need to choose the items carefully. Better luck next time." page="page3" voice="" />
+			<prompt name="noMoneyWrong" text="OOPS!! You have not chosen the right deal. You don’t have enough money left to shop. You need to choose the items carefully. Better luck next time." page="page3" voice="" />
+			
+			<prompt name="noMoney" text="NO MONEY LEFT TO SHOP!!&lt;br/&gt;Carefully choose the deals next time.&lt;br/&gt;Better luck next time." page="page4" voice="" />
+			<prompt name="noTime" text="TIME UP!!&lt;br/&gt;SORRY.&lt;br/&gt;The time for the super saver deal is up.&lt;br/&gt;Better luck next time." page="page4" voice="" />
+			<prompt name="s1win" text="Well done!!&lt;br/&gt;You chose the best deals for all the items.&lt;br/&gt;Enjoy the camping trip!" page="page4" voice="" />
+			<prompt name="s2win" text="Well done!!&lt;br/&gt;You chose the best deals for all the items." page="page4" voice="" />
+			<prompt name="s3win" text="Well done!!&lt;br/&gt;You chose the best deals for all the items.&lt;br/&gt;Enjoy the picnic!" page="page4" voice="" />
+			
+			<prompt name="s1i1h" text="In deal 1, what is the cost of 1Kg chips after the offer?**In deal 2, what is the cost of 1Kg chips after the offer?**Now, choose the best deal!" page="page3" voice="" />
+			<prompt name="s1i2h" text="In deal 1, what is the cost of 1L of juice after the offer?**So, what is the cost of 2L of juice if you chose deal 1?**In deal 2, what is the cost of 2L of juice after the offer?**Now, choose the best deal!" page="page3" voice="" />
+			<prompt name="s1i3h" text="In deal 1, what is the price of a pack of batteries after the offer?**In deal 1, what is the price of 2 packs of batteries?**In deal2, what is the price of 1 pack of batteries after the offer?**In deal2, what is the price of 2 packs of batteries?**Now, choose the best deal!" page="page3" voice="" />
+			<prompt name="s1i4h" text="In deal 1, what is the price of 1 packet of paper plate after the offer?**In deal1, what is the price of 3 packets of paper plate after the offer?**In deal2, what is the price of 1 packet of paper plate after the offer?**In deal2, what is the price of 3 packets of paper plate after the offer?**Now, choose the best deal!" page="page3" voice="" />
+			
+			<prompt name="s2i1h" text="In deal 1, what is the price of 1 packet of Maggi after the offer?**In deal 1, what is the price of 5 packets of Maggi after the offer?**In deal 2, what is the price of a pack of 4 Maggi after the offer?**In deal 2, what is the price of 5 packets of Maggi after the offer?**Now, choose the best deal!" page="page3" voice="" />
+			<prompt name="s2i2h" text="In deal 1, what is the price of 500 gm of tomato ketchup after the offer?**In deal 1, what is the price of 1 kg of tomato ketchup after the offer?**In deal 2, what is the price of 1 kg of tomato ketchup after the offer?**Now, choose the best deal!" page="page3" voice="" />
+			<prompt name="s2i3h" text="In deal 1, what is the price of 400 gms of Kellogs cornflakes after the offer?**In deal 1, what is the price of 1 kg of Kellogs cornflakes after the offer?**In deal 2, what is the price of 1 kg of Kellogs cornflakes after the offer?**Now, choose the best deal!" page="page3" voice="" />
+			<prompt name="s2i4h" text="In deal 1, what is the price of 1 packet of ACT II popcorn after the offer?**In deal 1, what is the price of 3 packets of ACT popcorn after the offer?**In deal 2, what is the price of 3 packets of ACT popcorn after the offer?**Now, choose the best deal!" page="page3" voice="" />
+			
+			<prompt name="s3i1h" text="In deal 1, what is the price of 1 pack of uno cards after the offer?**In deal 1, what is the price of 2 packs of uno cards after the offer?**In deal 2, what is the price of 1 pack of uno cards after the offer?**In deal 2, what is the price of 2 packs of uno cards after the offer?**Now, choose the best deal!" page="page3" voice="" />
+			<prompt name="s3i2h" text="In deal 1, what is the price of 1 Frisbee after the offer?**In deal 1, what is the price of 2 Frisbees after the offer?**In deal 2, what is the price of 1 Frisbee after the offer?**In deal 2, what is the price of 2 Frisbees after the offer?**Now, choose the best deal!" page="page3" voice="" />
+			<prompt name="s3i3h" text="In deal 1, what is the price of a pack of 3 tennis balls after the offer?**In deal 2, what is the price of 1 tennis ball after the offer?**In deal 2, what is the price of 3 tennis balls after the offer?**Now, choose the best deal!" page="page3" voice="" />
+			<prompt name="s3i4h" text="In deal 1, what is the price of a pack of 6 shuttlecocks after the offer?**In deal 2, what is the price of a pack of 3 shuttlecocks after the offer?**In deal 2, what is the price of a pack of 6 shuttlecocks after the offer?**Now, choose the best deal!" page="page3" voice="" />
+			
+			<prompt name="noHelp" text="You have already used the help option twice. You can't use it again." page="page3" voice="" />
+			<prompt name="guess" text="You seem to be guessing. Think and answer." page="page3" voice="" />
+		</prompts>
+		
+		<instructions>
+			<instruction name="i201" text="Shop for all items in the list." page="page2" voice="" />
+			<instruction name="i202" text="Always choose the best deal for the item you are shopping." page="page2" voice="" />
+			<instruction name="i203" text="You can ask for help for any 2 items in the shopping list." page="page2" voice="" />
+			<instruction name="i204" text="You can use the calculator for doing any calculations." page="page2" voice="" />
+			<instruction name="i205shop1" text="You have Rs. 458 with you to shop." page="page2" voice="" />
+			<instruction name="i205shop2" text="You have Rs. 255.50 with you to shop." page="page2" voice="" />
+			<instruction name="i205shop3" text="You have Rs. 490 with you to shop." page="page2" voice="" />
+			<instruction name="i206" text="The shop will close in 5 minutes. Hurry up!! Complete you shopping before the store closes." page="page2" voice="" />
+		</instructions>
+		
+		<miscellaneous>
+			<misc name="title" text="Choose the Best Deal" page="page0" voice="" />
+			<misc name="frontPageBg" text="../assets/bg.jpg" page="page1" voice="" />
+			<misc name="Shop1Bg" text="../assets/campaign-bg.png" page="page3" voice="" />
+			<misc name="Shop2Bg" text="../assets/grocery-bg.png" page="page3" voice="" />
+			<misc name="Shop3Bg" text="../assets/games-bg.png" page="page3" voice="" />
+			<misc name="dealHeader" text="CHOOSE THE BEST DEAL" page="page3" voice="" />
+			<misc name="timeText" text="Time left:" page="page3" voice="" />
+			<misc name="moneyText" text="Money left:" page="page3" voice="" />
+			<misc name="helpText" text="HELP" page="page3" voice="" />
+			<misc name="itemHeader" text="Choose the item to shop:" page="page3" voice="" />
+			<misc name="shop1item1" text="1 Kg potato chips" page="page3" voice="" />
+			<misc name="shop1item2" text="2 litres of Tropicana juice" page="page3" voice="" />
+			<misc name="shop1item3" text="2 packs of batteries" page="page3" voice="" />
+			<misc name="shop1item4" text="3 packets of paper plates" page="page3" voice="" />
+			<misc name="shop2item1" text="5 Maggi packets" page="page3" voice="" />
+			<misc name="shop2item2" text="500 ml of ketchup" page="page3" voice="" />
+			<misc name="shop2item3" text="1 Kg of cornflakes" page="page3" voice="" />
+			<misc name="shop2item4" text="3 popcorn packets" page="page3" voice="" />
+			<misc name="shop3item1" text="2 packs of UNO cards" page="page3" voice="" />
+			<misc name="shop3item2" text="2 frisbees" page="page3" voice="" />
+			<misc name="shop3item3" text="3 tennis balls" page="page3" voice="" />
+			<misc name="shop3item4" text="6 shuttlecocks" page="page3" voice="" />
+			<misc name="timeUpImg" text="../assets/timeup.png" page="page4" voice="" />
+			<misc name="noMoneyImg" text="../assets/noMoney.png" page="page4" voice="" />
+			<misc name="goodJobImg" text="../assets/great-job.png" page="page4" voice="" />
+		</miscellaneous>
+	</english>
+
+	<hindi>
+		
+	</hindi>
+
+	<gujarati>
+		
+	</gujarati>
+
+</application>

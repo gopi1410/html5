@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<application name="CGgame">
+    
+    <english>
+        <questions>
+            <que name="q1" text="There are numbers written on the stone shown below.&lt;br/&gt;Click on the points to get the codes." page="page1" voice="" />d
+            <que name="q2" text="You can move only left, right or up,down. Enter the coordinates of the points in the path you want to move to reach the red dot. You can take big steps too! :)&lt;br/&gt;You should reach the red dot in maximum two steps." page="page2" voice="" />
+            <que name="q3" text="You can fetch the code at red dot from the position you are currently at, using a rope. You just need to enter the minimum length of the rope that would connect the two dots." page="page3" voice="" />
+            <que name="q4_5" text="You need to click on 6 points which are 5 units away from you and are on the grid." page="page4" voice="" />
+            <que name="q4_10" text="You need to click on 4 points which are 10 units away from you and are on the grid." page="page4" voice="" />
+            <que name="q5" text="&lt;b&gt;Enter the password&lt;/b&gt;" page="page5" voice="" />
+            <que name="q2_1" text="You need to make a ladder of the appropriate slope and place it so that it connects the two red dots." page="page1" voice="" />
+            <que name="q2_2" text="The slope of the ladder is ___." page="page2,page4,page5" voice="" />
+            <que name="q2_3" text="You need to make a ladder of the appropriate length and place it so that it connects the two red dots." page="page3" voice="" />
+            <que name="q2_6" text="You need to make a ladder of the appropriate slope and place it so that it connects the two red dots.&lt;br&gt;You need to enter value of two parameters:" page="page6" voice="" />
+            <que name="q3_1" text="What is the y intercept of the laser beam labeled" page="page1" voice="" />
+            <que name="q3_2_1" text="Equation of one of the laser beams is" page="page2" voice="" />
+            <que name="q3_2_2" text="Enter the label of the line." page="page2" voice="" />
+            <que name="q3_3" text="What is the equation of the laser beam that has slope =" page="page3" voice="" />
+            <que name="q3_4" text="What is the equation of the laser beam that has y intercept =" page="page4" voice="" />
+            <que name="q3_5" text="What is the equation of the laser beam left?" page="page5" voice="" />
+        </questions>
+        
+        <prompts>
+            <prompt name="correctAns1" text="Great! You have collected a piece of code." page="1" voice="" />
+            <prompt name="wrongAns1" text="You got this wrong! You cannot afford to make another mistake" page="page1" voice="" />
+            <prompt name="wrongAns2" text="It seems that you need to understand plotting point in coordinate plane. You can take help at the cost of one code in the password." page="page1" voice="" />
+            <prompt name="wrongAns3" text="Oops! You got it wrong again! Your treasure hunt ends here! :(" page="page1" voice="" />
+            <prompt name="p1" text="Good work! To get the hint for the next step, you need to go to the red dot shown." page="page2" voice="" />
+            <prompt name="p2" text="You can move only left, right or up down. Try again!" page="page2" voice="" />
+            <prompt name="p3" text="It seems that you need to understand how to enter the point. Click on help to view an animation on how to express the coordinates of a point." page="page2" voice="" />
+            <prompt name="p4" text="Great! You have collected one more piece of code!" page="page2" voice="" />
+            <prompt name="p5" text="That’s incorrect! You will have only one more chance to get it correct! If you are not sure about how to find the distance, then you can avail the 'Help'." page="page2" voice="" />
+            <prompt name="cloudText" text="You are here!" page="page2" voice="" />
+            <prompt name="gridOut" text="Are you sure you want to leave the garden?? :P" page="page1,2,3,4" voice="" />
+            <prompt name="xHelp" text="x coordinate is the distance of the point from y-axis" page="page2" voice="" />
+            <prompt name="yHelp" text="y coordinate is the distance of the point from x-axis" page="page2" voice="" />
+            <prompt name="pointDisp0" text="The coordinates of the point are &lt;b&gt;( &#160; )&lt;/b&gt;" page="page2" voice="" />
+            <prompt name="pointDisp1" text="The coordinates of the point are &lt;b&gt;(7, )&lt;/b&gt;" page="page2" voice="" />
+            <prompt name="pointDisp2" text="The coordinates of the point are &lt;b&gt;(7,3)&lt;/b&gt;" page="page2" voice="" />
+            <prompt name="p6" text="Incorrect! You have either missed out on some point or have clicked a wrong point. You have one more chance to get the answer correct." page="page4" voice="" />
+            <prompt name="p7" text="Great! You collected all codes!" page="page5" voice="" />
+            <prompt name="p8" text="Great! You need to click on a few more points!" page="page5" voice="" />
+            <prompt name="p9" text="Type the password very carefully. One more mistake and your treasure hunt will be over!!" page="page5" voice="" />
+            <prompt name="p10" text="You got it!! You can now enter the palace!" page="page5" voice="" />
+            <prompt name="p11" text="Incorrect! You have one more attempt. If you answer it incorrectly again, your treasure hunt will end. You can avail the help before the next attempt." page="page1" voice="" />
+            <prompt name="p12" text="You got it!!" page="page1" voice="" />
+            <prompt name="p13" text="Right! You move to the next level." page="page2" voice="" />
+            <prompt name="p14" text="Incorrect! Click on help to see the hint. You have one more attempt. If you answer it incorrectly again, your treasure hunt will end." page="page2" voice="" />
+            <prompt name="p15" text="You will get only one attempt on this question. If you answer it incorrectly, your treasure hunt will end." page="page4" voice="" />
+            <prompt name="p16" text="You got this one!&lt;br&gt;4 more to go!" page="page1" voice="" />
+            <prompt name="p17" text="You got this one!&lt;br&gt;3 more to go!" page="page1" voice="" />
+            <prompt name="p18" text="You got this one!&lt;br&gt;2 more to go!" page="page1" voice="" />
+            <prompt name="p19" text="You got this one!&lt;br&gt;1 more to go!" page="page1" voice="" />
+            <prompt name="p20" text="General form of equation of line is y = mx + c, where m is the slope of the line and c is the y intercept of the line. Try again! If your answer is wrong again, you treasure hunt will end!" page="page1" voice="" />
+            <prompt name="p21" text="Incorrect! If you compare the equation with the standard form y = mx + c, you get c = 0. Try again! If your answer is wrong again, you treasure hunt will end!" page="page2" voice="" />
+            <prompt name="p22" text="General form of equation of line is y = mx + c, where m is the slope of the line and c is the y intercept of the line. Try again! If your answer is wrong again, you treasure hunt will end!" page="page3,page4,page5" voice="" />
+            <prompt name="p23" text="Hurray! The treasure is yours!!" page="page5" voice="" />
+        </prompts>
+        
+        <instructions>
+            <instruction name="inst1" text="You need to find out codes for the password to enter the Palace" page="2" voice="" />
+            <instruction name="ropeDecimal" text="(Enter the value up to two decimal places. You can take help of the calculator provided below.)" page="page3" voice="" />
+            <instruction name="inst2_1" text="(Enter the answer upto two decimal places.)" page="page1" voice="" />
+            <instruction name="inst2_2" text="(You can use the calculator given below. Enter the answer up to 2 decimal places.)" page="page2" voice="" />
+            <instruction name="help2_1_1" text="Slope = change in y coordinate/ change in x coordinate" page="page1" voice="" />
+            <instruction name="help2_1_2" text="Change in y coordinate = y2 – y1&lt;br&gt;Change in x coordinate = x2 – x1" page="page1" voice="" />
+            <instruction name="help2_1_3" text="Hence,&lt;br&gt;Slope = (y2 – y1)/(x2 – x1)" page="page1" voice="" />
+            <instruction name="help2_3_1" text="Length of the ladder is the distance between the two endpoints of the ladder. So you can use distance formula to find the length of the ladder."  page="page3" voice="" />
+            <instruction name="help3_1" text="If you find out the coordinates of the two points you can use the distance formula to calculate the distance!"  page="page3" voice="" />
+            <instruction name="help3_2" text="And if you don’t remember the formula, recollect the fact that the distance formula is basically derived from Pythagoras theorem."  page="page3" voice="" />
+            <instruction name="help3_3" text="Can you try again with this information?"  page="page3" voice="" />
+        </instructions>
+        
+        <miscellaneous>
+            <misc name="title" text="Coordinate Game" page="page0" voice="" />
+            <!-- no spaces should be in the names below. Just separated by a single comma but no space & should be AT LEAST 6 CHARACTERS long -->
+            <misc name="names" text="Galileo,Newton,Edison,Einstein,Archimedes,Siemens,Pythagoras,Leibniz,Euclid,Aryabhatta,Neumann,Ramanujan,Laplace,Hilbert,Riemann" page="page0" voice="" />
+            <misc name="frontpageHeader" text="TREASURE HUNT" page="page1" voice="" />
+            <misc name="frontpageText" text="&lt;p&gt;There is a treasure in a palace. You need to crack a few codes to reach the treasure. There are three stages in the game.&lt;/p&gt;&lt;p&gt;Stage I: The Garden&lt;/p&gt;&lt;p&gt;Stage II: The Palace&lt;/p&gt;&lt;p&gt;Stage III: The Royal Treasury&lt;/p&gt;&lt;p&gt;Your mission starts when you enter the garden in front of the palace.&lt;/p&gt;" page="page1" voice="" />
+            <misc name="startButtonText" text="START" page="page1" voice="" />
+            <misc name="proceedButtonText1" text="OK" page="page1" voice="" />
+            <misc name="proceedButtonText2" text="PROCEED" page="page1" voice="" />
+            <misc name="proceedButtonText3" text="NEXT" page="page1" voice="" />
+            <misc name="proceedButtonText4" text="DONE" page="page1" voice="" />
+            <misc name="helpText" text="HELP" page="page1" voice="" />
+            <misc name="positiveText" text="Positive" page="page2" voice="" />
+            <misc name="negativeText" text="Negative" page="page2" voice="" />
+            <misc name="stage2Header" text="The Palace" page="page1" voice="" />
+            <misc name="stage2Text" text="There are levels in the palace and you can go to the next level using the ladders. To climb each ladder, you will have to find the answer to the question attached to the ladder.Here you go…!!! :)" page="page1" voice="" />
+            <misc name="inputText1" text="Slope: " page="page1" voice="" />
+            <misc name="inputText2" text="Length: " page="page2" voice="" />
+            <misc name="stage3Header" text="The Royal Treasury" page="page1" voice="" />
+            <misc name="stage3Text" text="The locker is guarded by 5 laser beams. You need to deactivate each beam by answering the question related to the beam.&lt;br&gt;By pressing the button corresponding to a particular laser beam, you can view the question. As you go on finding the answers to the questions, the code will get generated." page="page1" voice="" />
+            <misc name="help3ButtonText1" text="Fine. This information is sufficient for me." page="page3" voice="" />
+            <misc name="help3ButtonText2" text="I want to see an example." page="page3" voice="" />
+        </miscellaneous>
+    </english>
+    
+</application>

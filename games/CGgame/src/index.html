@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<meta http-equiv="cache-control" content="no-cache">
+        <title>Coordinate Game</title>
+        
+        <link rel="stylesheet" href="../css/mystyle.css" type="text/css" media="all">
+        <link rel="stylesheet" href="../css/mystyle2.css" type="text/css" media="all">
+        <link rel="stylesheet" href="../css/mystyle3.css" type="text/css" media="all">
+        <link rel="stylesheet" href="../css/jpreloader.css" type="text/css" media="all">
+        
+        <script src="../../../libs/loadxmldoc.js"></script>
+        <script src="../../../libs/jquery.js"></script>
+        <script src="../libs/jpreLoader.min.js"></script>
+        <script src="../../../libs/parameterPassing.js"></script>
+        <script src="../libs/myscript.js"></script>
+        <script src="../libs/myscript2.js"></script>
+        <script src="../libs/myscript3.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script>
+            loadXML('data.xml', function() { onXMLload(); });
+        </script>
+    </head>
+    
+    <body>
+        <div id="mainBody1" class="occupyWhole">
+            <div id="main1" class="occupyWhole rounded-corners border">
+                <div id="mainHeader" align="center">
+                    <h1></h1>
+                </div>
+                <div id="mainText" align="center">
+                    
+                </div>
+                <div id="startButton" align="center">
+                    <button class="norm-button" onclick="startGame();">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="endOverlay" class="occupyWhole rounded-corners border">
+            </div>
+            
+            <div id="stage1" class="occupyWhole rounded-corners border">
+                <div id="leftStage" class="rounded-corners">
+                    <div id="questionDisp" align="center">
+                        
+                    </div>
+                    <div id="coordinatesDisp">
+                        <div id="stoneImg">
+                            <img src="../assets/stone.png">
+                        </div>
+                        <div id="point1Disp">
+                            
+                        </div>
+                        <div id="point2Disp">
+                            
+                        </div>
+                        <div id="point3Disp">
+                            
+                        </div>
+                    </div>
+                    <div id="stepDisp" align="center">
+                        <p>Enter x and y coordinates in separate blanks and then click 'Done'.</p>
+                        <div id="step1Disp" align="center">
+                            <p>Step 1 &nbsp;&nbsp;</p>
+                            <input type="text" maxlength=2>
+                            <input type="text" maxlength=2>
+                        </div>
+                        <div id="step2Disp" align="center">
+                            <p>Step 2 &nbsp;&nbsp;</p>
+                            <input type="text" maxlength=2>
+                            <input type="text" maxlength=2>
+                        </div>
+                        <div id="step3Disp" align="center">
+                            <p>Step 3 &nbsp;&nbsp;</p>
+                            <input type="text" maxlength=2>
+                            <input type="text" maxlength=2>
+                        </div>
+                        <div id="doneButton">
+                            <button class="norm-button" onclick="proceed4();">
+                                <span>DONE</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="step3" align="center">
+                        <div id="ropeLength">
+                            The rope length =
+                            <input type="text" maxlength="5"> units
+                            <button class="norm-button" onclick="proceed8();">
+                                <span>SUBMIT</span>
+                            </button>
+                            <p></p>
+                        </div>
+                        <div id="step3Calc" class="rounded-corners">
+                            <b>Square Root Calculator</b>
+                            Number: <input type="text" maxlength="6">
+                            <input type="submit" value="Calculate" onclick="squareCalc();"><br>
+                            Square root: <input type="text" disabled="disabled">
+                        </div>
+                        <img src="../assets/calc.png">
+                    </div>
+                    <div id="pwdInputBox" align="center">
+                        <input type="text"><br><br>
+                        <button class="norm-button" onclick="proceed14();">
+                            <span>DONE</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="rightStage" class="rounded-corners">
+                    <div id="gardenImg">
+                        <img src="../assets/garden.png">
+                    </div>
+                    <div id="overlay">
+                        
+                    </div>
+                    <div id="gridImg">
+                        <img src="../assets/grid.png">
+                    </div>
+                    <div id="gridStage">
+                        <div id="cloud">
+                            <img src="../assets/cloud.png">
+                            <p></p>
+                        </div>
+                        <div id="point1" class="point rounded-corners">
+                        </div>
+                        <div id="point2" class="point rounded-corners">
+                        </div>
+                        <div id="point3" class="point rounded-corners">
+                        </div>
+                        <div id="point4" class="point rounded-corners">
+                        </div>
+                        <div id="point5" class="point rounded-corners">
+                        </div>
+                        <div id="point6" class="point rounded-corners">
+                        </div>
+                        <div id="point7" class="point rounded-corners">
+                        </div>
+                        <div id="point8" class="point rounded-corners">
+                        </div>
+                        <div id="point9" class="point rounded-corners">
+                        </div>
+                        <div id="point10" class="point rounded-corners">
+                        </div>
+                        <div id="point11" class="point rounded-corners">
+                        </div>
+                        <div id="point12" class="point rounded-corners">
+                        </div>
+                        <div id="point13" class="point rounded-corners">
+                        </div>
+                        <div id="point14" class="point rounded-corners">
+                        </div>
+                        <div id="point15" class="point rounded-corners">
+                        </div>
+                        <div id="secondPoint" class="point rounded-corners">
+                        </div>
+                    </div>
+                    <div id="prompt1" class="prompt" align="center">
+                        <p></p>
+                        <button class="norm-button" onclick="proceed1();">
+                            <span></span>
+                        </button>
+                        <button class="norm-button" onclick="help1();">
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+                <div id="bottomPane" class="rounded-corners">
+                    <div id="leftBottom" class="rounded-corners">
+                        
+                    </div>
+                    <div id="rightBottom" class="rounded-corners">
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div id="password-area" class="occupyWhole rounded-corners">
+                <div id="pwdDisp" align="center">
+                    
+                </div>
+            </div>
+            
+            <div id="help1" class="occupyWhole rounded-corners border">
+                <div id="help1Header" class="rounded-corners" align="center">
+                    <div id="helpCoordinates" align="center">
+                        <h1>(<span>3</span>,<span>4</span>)</h1>
+                    </div>
+                    <div id="helpSubHeader">
+                        <p><br>X coordinate</p>
+                        <img src="../assets/leftarrow.png">
+                        <img src="../assets/rightarrow.png">
+                        <p><br>Y coordinate</p>
+                    </div>
+                </div>
+                <div id="help1GridContainer" class="rounded-corners" align="center">
+                    <div id="help1Grid">
+                        <img src="../assets/grid.png">
+                    </div>
+                    <div id="xLine">
+                    </div>
+                    <div id="xNumber">
+                        3
+                    </div>
+                    <div id="yLine">
+                    </div>
+                    <div id="yNumber">
+                        4
+                    </div>
+                    <div id="xLine1">
+                    </div>
+                    <div id="yLine1">
+                    </div>
+                    <div id="help1Point">
+                    </div>
+                    <div id="help1Next">
+                        <button class="norm-button" onclick="help1Obj.step1();">
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="help2" class="occupyWhole rounded-corners border">
+                <div id="help2GridContainer" class="rounded-corners" align="center">
+                    <div id="help2Grid">
+                        <img src="../assets/grid.png">
+                    </div>
+                    <div id="xDisp2">
+                    </div>
+                    <div id="dispPointCoord">
+                        
+                    </div>
+                    <div id="xUnits">
+                        <b>7 units</b>
+                    </div>
+                    <div id="yUnits">
+                        <b>3 units</b>
+                    </div>
+                    <div id="help2Point" class="point rounded-corners">
+                    </div>
+                    <div id="help2Line1">
+                    </div>
+                    <div id="help2Line2">
+                    </div>
+                    <div id="help2Line3">
+                    </div>
+                    <div id="help2Line4">
+                    </div>
+                    <div id="help2Next">
+                        <button class="norm-button" onclick="help2Obj.step1();">
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="help3" class="occupyWhole rounded-corners border">
+                <p></p>
+                <p></p>
+                <p></p>
+                <img src="../assets/help3.png" height="490" width="780">
+                <br><br>
+                <div id="help3Next" align="center">
+                    <button class="norm-button" onclick="help3Obj.step2();">
+                        <span></span>
+                    </button>
+                    <button class="norm-button" onclick="help3Obj.step1();">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mainBody2" class="occupyWhole">
+            <div id="main2" class="occupyWhole rounded-corners border" align="center">
+                <h1></h1>
+                <p></p>
+                <br>
+                <div id="startButton2" align="center">
+                    <button class="norm-button" onclick="proceed2_2();">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+            <div id="stage2" class="occupyWhole rounded-corners border">
+                <div id="left2" class="rounded-corners">
+                    <div id="left2Top" align="center">
+                        <p></p>
+                        <div id="ladderContainer">
+                            <canvas id="ladderCanvas" height="100" width="100">
+                                Your browser has no canvas support.
+                            </canvas>
+                        </div>
+                        <div id="buttonsContainer">
+                            <button class="norm-button" onclick="">
+                                <span></span>
+                            </button>
+                            <button class="norm-button" onclick="">
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="left2Bot" align="center">
+                        <b></b>
+                        <input type="text" maxlength="5" onkeyup="adjustLadder('rotate');"><br>
+                        <p></p>
+                        <button class="norm-button" onclick="proceed2_3();">
+                            <span></span>
+                        </button>
+                        <div id="step3Calc" class="rounded-corners">
+                            <b>Square Root Calculator</b>
+                            Number: <input type="text" maxlength="6">
+                            <input type="submit" value="Calculate" onclick="squareCalc();"><br>
+                            Square root: <input type="text" disabled="disabled">
+                        </div>
+                        <img src="../assets/calc.png">
+                    </div>
+                </div>
+                <div id="right2" class="rounded-corners">
+                    <div id="entry-door2">
+                        <img src="../assets/door2.jpg">
+                    </div>
+                    <div id="stage2canvasContainer">
+						<canvas id="stage2Canvas" height="600" width="550">
+							Your browser does not support canvas
+						</canvas>
+					</div>
+					<div id="prompt2" class="prompt" align="center">
+						<p></p>
+                        <button class="norm-button" onclick="">
+                            <span></span>
+                        </button>
+                        <button class="norm-button" onclick="">
+                            <span></span>
+                        </button>
+					</div>
+                </div>
+            </div>
+            <div id="help2_1" class="occupyWhole rounded-corners border">
+                <p></p>
+                <p></p>
+                <p></p>
+                <button class="norm-button" onclick="helpObj2_1.step1();">
+                    <span></span>
+                </button>
+            </div>
+            <div id="help2_2" class="occupyWhole rounded-corners border">
+                
+            </div>
+            <div id="help2_3" class="occupyWhole rounded-corners border">
+                <p></p>
+                <p></p>
+                <p></p>
+                <img src="../assets/help3.png" height="490" width="780">
+                <br><br>
+                <div id="helpNext2_3" align="center">
+                    <button class="norm-button" onclick="helpObj2_3.step2();">
+                        <span></span>
+                    </button>
+                    <button class="norm-button" onclick="helpObj2_3.step1();">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mainBody3" class="occupyWhole">
+            <div id="main3" class="occupyWhole rounded-corners border" align="center">
+                <h1></h1>
+                <p></p>
+                <br>
+                <div id="startButton3" align="center">
+                    <button class="norm-button" onclick="proceed3_2();">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+            <div id="stage3" class="occupyWhole rounded-corners border">
+                <div id="mainContainer">
+                    <div id="grid3">
+                        <img src="../assets/grid3.png">
+                    </div>
+                    <div id="linesContainer">
+                        <canvas id="linesCanvas" height="598" width="598">
+                            Your browser doesn't currently support canvas. Go & get yourself a decent browser first.
+                        </canvas>
+                    </div>
+                    <div id="prompt3" class="prompt" align="center">
+                        <p></p>
+                        <button class="norm-button" onclick="">
+                            <span>OK</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="pole3">
+                    <img src="../assets/pole.png">
+                </div>
+                <div id="right3">
+                    <div id="quesArea" align="center">
+                        <p></p>
+                    </div>
+                    <div id="ansArea" align="center">
+                        <input id="firstInp" type="text"><br>
+                        <div id="ansInput">
+                            <p>y = </p>
+                            <input type="text" maxlength="2">
+                            <p> x </p>
+                            <input type="text" maxlength="1">
+                            <input type="text" maxlength="2">
+                        </div>
+                        <!--<div id="keyboard">
+                            <table cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td><input type="button" value="0" onclick=""></td>
+                                        <td><input type="button" value="1" onclick=""></td>
+                                        <td><input type="button" value="2" onclick=""></td>
+                                        <td><input type="button" value="3" onclick=""></td>
+                                        <td><input type="button" value="4" onclick=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="button" value="5" onclick=""></td>
+                                        <td><input type="button" value="6" onclick=""></td>
+                                        <td><input type="button" value="7" onclick=""></td>
+                                        <td><input type="button" value="8" onclick=""></td>
+                                        <td><input type="button" value="9" onclick=""></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="button" value="+" onclick=""></td>
+                                        <td><input type="button" value="-" onclick=""></td>
+                                        <td><input type="button" value="Backspace" onclick=""></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>-->
+                        <button class="norm-button" onclick="proceed3_3();">
+                            <span>DONE</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameEndDisplay" class="occupyWhole rounded-corners border" align="center">
+            <img src="../assets/tres1.png">
+            <img src="../assets/tres2.png">
+            <img src="../assets/tres3.png"><br><br>
+            <button class="norm-button" onclick="gameEnd('win');">
+                <span>QUIT</span>
+            </button>
+        </div>
+        <button onclick="proceed16();">Jump to stage 2</button>
+        <button onclick="proceed16();loadStage('mainBody2', 'mainBody3');proceed3_1();">Jump to stage 3</button>
+        
+        <div id=jSplash>
+            <section>
+                <h1>Welcome to Mindspark!</h1><br><br>
+                <h2>Please wait</h2>
+                <p>Loading...</p>
+            </section>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                //calling jPreLoader function with properties
+                $('body').jpreLoader({
+                    splashID: "#jSplash",
+                    splashFunction: function() {  //passing Splash Screen script to jPreLoader
+                        $('#jSplash').hide().fadeIn(800);
+                    }
+                }, function() {	//jPreLoader callback function
+                    
+                });
+            });
+        </script>
+    </body>
+</html>
