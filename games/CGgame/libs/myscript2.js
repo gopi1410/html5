@@ -31,6 +31,9 @@ var man={
 function proceed2_1() {
     $("#main2 > h1").html(miscArr.stage2Header);
     $("#main2 > p").html(miscArr.stage2Text);
+    setTimeout(function() {
+        $("#startButton2 > button").focus();
+    }, 1000);
     $("#startButton2 > button > span").html(miscArr.startButtonText);
     makePointsArr();
     sessionStorage.correct=0;
@@ -40,6 +43,10 @@ function proceed2_1() {
 function proceed2_2() {
     $("#main2").fadeOut(600, function() {
         $("#stage2").fadeIn(500);
+        $("#cloud2").fadeIn(1000);
+        var tmp=getActualCoordinates(validPoints[0][0],validPoints[0][1]);
+        $("#cloud2").css({'top': (tmp.y-80)+'px', 'left': (tmp.x-105)+'px'});
+        $("#cloud2 > p").html(promptArr.cloudText);
     });
     canvas_init();
     ladder_init();
@@ -49,6 +56,7 @@ function proceed2_2() {
     $("#left2Bot > button > span").html(miscArr.proceedButtonText4);
 }
 function proceed2_3() {
+    $("#cloud2").hide();
     var selectedPoints=JSON.parse(sessionStorage.selectedPoints);
     $("#ladderCanvas").css('position', 'absolute');
     $("#ladderCanvas").animate({
@@ -59,7 +67,9 @@ function proceed2_3() {
             drawLineByActualGrid(selectedPoints[0][0],selectedPoints[0][1],selectedPoints[1][0],selectedPoints[1][1],true);
             $("#ladderCanvas").hide();
             $("#ladderCanvas").css({'position': 'relative', 'top': '0px', 'left': '0px'});
-            $("#prompt2").fadeIn(1000);
+            $("#prompt2").fadeIn(1000, function() {
+                $("#prompt2 > button:first").focus();
+            });
             $("#prompt2 > p").html('<br><br>'+promptArr.p12);
             $("#prompt2 > p").css('font-size', '21px');
             $("#prompt2 > button > span").css('width', '90px');
@@ -71,7 +81,9 @@ function proceed2_3() {
             //show prompt & after clicking ok on prompt, take ladder to original position.
             sessionStorage.wrong=parseInt(sessionStorage.wrong, 10)+1;
             if(sessionStorage.wrong==="1") {
-                $("#prompt2").fadeIn(1000);
+                $("#prompt2").fadeIn(1000, function() {
+                    $("#prompt2 > button:first").focus();
+                });
                 $("#prompt2 > p").html('<br>'+promptArr.p11);
                 $("#prompt2 > p").css('font-size', '19px');
                 $("#prompt2 > button").show();
@@ -82,11 +94,18 @@ function proceed2_3() {
                 $("#prompt2 > button:last").attr('onclick', 'helpObj2_1=new help2_1();');
             }
             else {
-                $("#prompt2").fadeIn(1000);
+                extraParameters+=" Game ended at Stage2 Ques1(computing slope)";
+                $("#prompt2").fadeIn(1000, function() {
+                    $("#prompt2 > button:first").focus();
+                });
                 $("#prompt2 > p").html('<br><br>'+promptArr.wrongAns3);
                 $("#prompt2 > p").css('font-size', '20px');
-                $("#prompt2 > button").hide();
-                gameEnd("Stage2 Ques1");
+                $("#prompt2 > button").show();
+                $("#prompt2 > button > span").css('width', 'auto');
+                $("#prompt2 > button > span:first").html(miscArr.proceedButtonText5);
+                $("#prompt2 > button > span:last").html(miscArr.proceedButtonText6);
+                $("#prompt2 > button:first").attr('onclick', 'window.location.reload()');
+                $("#prompt2 > button:last").attr('onclick', 'gameEnd("Stage2 Ques1(computing slope)")');
             }
         }
     });
@@ -185,7 +204,9 @@ function proceed2_7() {
             drawLineByActualGrid(selectedPoints[4][0],selectedPoints[4][1],selectedPoints[5][0],selectedPoints[5][1],true);
             $("#ladderCanvas").hide();
             $("#ladderCanvas").css({'position': 'relative', 'top': '0px', 'left': '0px'});
-            $("#prompt2").fadeIn(1000);
+            $("#prompt2").fadeIn(1000, function() {
+                $("#prompt2 > button:first").focus();
+            });
             $("#prompt2 > p").html('<br><br>'+promptArr.p12);
             $("#prompt2 > p").css('font-size', '21px');
             $("#prompt2 > button > span").css('width', '90px');
@@ -197,7 +218,9 @@ function proceed2_7() {
             //show prompt & after clicking ok on prompt, take ladder to original position.
             sessionStorage.wrong=parseInt(sessionStorage.wrong, 10)+1;
             if(sessionStorage.wrong==="1") {
-                $("#prompt2").fadeIn(1000);
+                $("#prompt2").fadeIn(1000, function() {
+                    $("#prompt2 > button:first").focus();
+                });
                 $("#prompt2 > p").html('<br>'+promptArr.p11);
                 $("#prompt2 > p").css('font-size', '19px');
                 $("#prompt2 > button").show();
@@ -208,11 +231,18 @@ function proceed2_7() {
                 $("#prompt2 > button:last").attr('onclick', 'helpObj2_3=new help2_3();');
             }
             else {
-                $("#prompt2").fadeIn(1000);
+                extraParameters+=" Game ended at Stage2 Ques3(computing length)";
+                $("#prompt2").fadeIn(1000, function() {
+                    $("#prompt2 > button:first").focus();
+                });
                 $("#prompt2 > p").html('<br><br>'+promptArr.wrongAns3);
                 $("#prompt2 > p").css('font-size', '20px');
-                $("#prompt2 > button").hide();
-                gameEnd("Stage2 Ques3");
+                $("#prompt2 > button").show();
+                $("#prompt2 > button > span").css('width', 'auto');
+                $("#prompt2 > button > span:first").html(miscArr.proceedButtonText5);
+                $("#prompt2 > button > span:last").html(miscArr.proceedButtonText6);
+                $("#prompt2 > button:first").attr('onclick', 'window.location.reload()');
+                $("#prompt2 > button:last").attr('onclick', 'gameEnd("Stage2 Ques3(computing length)")');
             }
         }
     });
@@ -231,7 +261,9 @@ function proceed2_8() {
             $("#buttonsContainer > button:first").attr('onclick', 'void 0;');
             $("#buttonsContainer > button:last").attr('onclick', 'void 0;');
             $("#buttonsContainer").fadeIn(1000);
-            $("#prompt2").fadeIn(1000);
+            $("#prompt2").fadeIn(1000, function() {
+                $("#prompt2 > button:first").focus();
+            });
             $("#prompt2 > p").html('<br>'+promptArr.p15);
             $("#prompt2 > p").css('font-size', '20px');
             $("#prompt2 > button:first").show();
@@ -277,7 +309,9 @@ function proceed2_10() {
             $("#left2Bot").hide();
             $("#buttonsContainer > button:first").attr('onclick', 'void 0;');
             $("#buttonsContainer > button:last").attr('onclick', 'void 0;');
-            $("#prompt2").fadeIn(1000);
+            $("#prompt2").fadeIn(1000, function() {
+                $("#prompt2 > button:first").focus();
+            });
             $("#prompt2 > p").html('<br>'+promptArr.p15);
             $("#prompt2 > p").css('font-size', '20px');
             $("#prompt2 > button:first").show();
@@ -343,7 +377,9 @@ function proceed2_13() {
             drawLineByActualGrid(selectedPoints[10][0],selectedPoints[10][1],selectedPoints[11][0],selectedPoints[11][1],true);
             $("#ladderCanvas").hide();
             $("#ladderCanvas").css({'position': 'relative', 'top': '0px', 'left': '0px'});
-            $("#prompt2").fadeIn(1000);
+            $("#prompt2").fadeIn(1000, function() {
+                $("#prompt2 > button:first").focus();
+            });
             $("#prompt2 > p").html('<br><br>'+promptArr.p12);
             $("#prompt2 > p").css('font-size', '21px');
             $("#prompt2 > button > span").css('width', '90px');
@@ -355,7 +391,9 @@ function proceed2_13() {
             //show prompt & after clicking ok on prompt, take ladder to original position.
             sessionStorage.wrong=parseInt(sessionStorage.wrong, 10)+1;
             if(sessionStorage.wrong==="1") {
-                $("#prompt2").fadeIn(1000);
+                $("#prompt2").fadeIn(1000, function() {
+                    $("#prompt2 > button:first").focus();
+                });
                 $("#prompt2 > p").html('<br>'+promptArr.p11);
                 $("#prompt2 > p").css('font-size', '19px');
                 $("#prompt2 > button:first").show();
@@ -365,11 +403,18 @@ function proceed2_13() {
                 $("#prompt2 > button:first").attr('onclick', 'resetLadder();');
             }
             else {
-                $("#prompt2").fadeIn(1000);
+                extraParameters+=" Game ended at Stage2 Ques6(computing both slope ad length)";
+                $("#prompt2").fadeIn(1000, function() {
+                    $("#prompt2 > button:first").focus();
+                });
                 $("#prompt2 > p").html('<br><br>'+promptArr.wrongAns3);
                 $("#prompt2 > p").css('font-size', '20px');
-                $("#prompt2 > button").hide();
-                gameEnd("Stage2 Ques6");
+                $("#prompt2 > button").show();
+                $("#prompt2 > button > span").css('width', 'auto');
+                $("#prompt2 > button > span:first").html(miscArr.proceedButtonText5);
+                $("#prompt2 > button > span:last").html(miscArr.proceedButtonText6);
+                $("#prompt2 > button:first").attr('onclick', 'window.location.reload()');
+                $("#prompt2 > button:last").attr('onclick', 'gameEnd("Stage2 Ques6(computing both slope ad length)")');
             }
         }
     });
@@ -446,7 +491,9 @@ function help2_3() {
 }
 
 function correctSlope(level) {
-    $("#prompt2").fadeIn(1000);
+    $("#prompt2").fadeIn(1000, function() {
+        $("#prompt2 > button:first").focus();
+    });
     $("#prompt2 > p").html('<br><br>'+promptArr.p13);
     $("#prompt2 > p").css('font-size', '20px');
     $("#prompt2 > button > span").css('width', '90px');
@@ -465,14 +512,23 @@ function correctSlope(level) {
 function wrongSlope(level) {
     sessionStorage.wrong=parseInt(sessionStorage.wrong, 10)+1;
     if(sessionStorage.wrong==="2" || level===4 || level===5) {
-        $("#prompt2").fadeIn(1000);
+        extraParameters+=" Game ended at Stage2 Ques"+level+"(marking slope)";
+        $("#prompt2").fadeIn(1000, function() {
+            $("#prompt2 > button:first").focus();
+        });
         $("#prompt2 > p").html('<br><br>'+promptArr.wrongAns3);
         $("#prompt2 > p").css('font-size', '20px');
-        $("#prompt2 > button").hide();
-        gameEnd("Stage2 Ques"+level);
+        $("#prompt2 > button").show();
+        $("#prompt2 > button > span").css('width', 'auto');
+        $("#prompt2 > button > span:first").html(miscArr.proceedButtonText5);
+        $("#prompt2 > button > span:last").html(miscArr.proceedButtonText6);
+        $("#prompt2 > button:first").attr('onclick', 'window.location.reload()');
+        $("#prompt2 > button:last").attr('onclick', 'gameEnd("Stage2 Ques'+level+'(marking slope)")');
     }
     else {
-        $("#prompt2").fadeIn(1000);
+        $("#prompt2").fadeIn(1000, function() {
+            $("#prompt2 > button:first").focus();
+        });
         $("#prompt2 > p").html('<br>'+promptArr.p14);
         $("#prompt2 > p").css('font-size', '20px');
         $("#prompt2 > button").show();
@@ -746,7 +802,12 @@ function mark_points() {
     var text;
     for(var i=0;i<selectedPoints.length;i++) {
         text="("+selectedPoints[i][0]+","+selectedPoints[i][1]+")";
-        drawText(text, selectedPoints[i][0], selectedPoints[i][1]);
+        if(i===10 || i===8 || i===4) {
+            drawText(text, selectedPoints[i][0], selectedPoints[i][1]-0.55);
+        }
+        else {
+            drawText(text, selectedPoints[i][0], selectedPoints[i][1]);
+        }
     }
 }
 function drawMajorDots(x1,y1,x2,y2) {

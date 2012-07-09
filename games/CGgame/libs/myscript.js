@@ -53,6 +53,7 @@ function onXMLload() {
         $("#mainHeader > h1").html(miscArr.frontpageHeader);
         $("#mainText").html(miscArr.frontpageText);
         $("#startButton > button > span").html(miscArr.startButtonText);
+		$("#startButton > button").focus();
         
         initScientist();
 	});
@@ -71,6 +72,9 @@ function startGame() {
 	$("#prompt1 > button:last").hide();
 	$("#prompt1 > p").html("<br>"+instArr.inst1);
 	$("#prompt1 span:first").html(miscArr.proceedButtonText1);
+	setTimeout(function() {
+		$("#prompt1 > button:first").focus();
+	}, 1000);
 }
 function proceed1() {
 	$("#prompt1").fadeOut(1000);
@@ -87,7 +91,9 @@ function correctPoint() {
 	$("#prompt1 span").css('width', '90px');
 	$("#prompt1 > p").css('font-size', '20px');
 	$("#prompt1 > button:last").hide();
-	$("#prompt1").fadeIn(1000);
+	$("#prompt1").fadeIn(1000, function() {
+		$("#prompt1 > button:first").focus();
+	});
 	$("#prompt1 > button").attr('onclick', 'proceed2();');
 	$("#prompt1 > p").html("<br>"+promptArr.correctAns1);
 	$("#prompt1 span:first").html(miscArr.proceedButtonText1);
@@ -108,7 +114,9 @@ function wrongPoint() {
 	sessionStorage.wrong=parseInt(sessionStorage.wrong, 10)+1;
 	$("#prompt1 span").css('width', '90px');
 	$("#prompt1 > p").css('font-size', '20px');
-	$("#prompt1").fadeIn(1000);
+	$("#prompt1").fadeIn(1000, function() {
+		$("#prompt1 > button:first").focus();
+	});
 	$("#prompt1 > button:first").attr('onclick', 'proceed2();');
 	if(sessionStorage.wrong==="1") {
 		$("#prompt1 > p").html("<br>"+promptArr.wrongAns1);
@@ -126,16 +134,23 @@ function wrongPoint() {
 		$("#prompt1 span").css('width', 'auto');
 	}
 	else {
+		extraParameters+=" Game ended at Stage1 Ques1(marking coordinates on the grid)";
 		$("#prompt1 > p").html("<br>"+promptArr.wrongAns3);
-		$("#prompt1 > button").hide();
-		setTimeout(gameEnd('Stage1 Ques1'), 2000);
+		$("#prompt1 > button").show();
+		$("#prompt1 > button > span").css('width', 'auto');
+		$("#prompt1 > button > span:first").html(miscArr.proceedButtonText5);
+		$("#prompt1 > button > span:last").html(miscArr.proceedButtonText6);
+		$("#prompt1 > button:first").attr('onclick', 'window.location.reload()');
+		$("#prompt1 > button:last").attr('onclick', "gameEnd('Stage1 Ques1(marking coordinates on the grid)')");
 	}
 }
 function proceed2() {
 	if(sessionStorage.correct==="3") {
 		//proceeding to question 2
 		$("#prompt1").hide();
-		$("#prompt1").fadeIn(1000);
+		$("#prompt1").fadeIn(1000, function() {
+			$("#prompt1 > button:first").focus();
+		});
 		stage1LastPoint.removeClass('clicked-point');
 		$(".clicked-point").remove();
 		$("#secondPoint").show();
@@ -196,6 +211,11 @@ function proceed4() {
 	else {
 		$("#cloud").hide();
 		var t=calcDist(parseInt(value1, 10), parseInt(value2, 10));
+		if(($(".man")[0].style.top!=$("#secondPoint")[0].style.top && $(".man")[0].style.left!=$("#secondPoint")[0].style.left) && (t.top+"%"===$("#secondPoint")[0].style.top && t.left+"%"===$("#secondPoint")[0].style.left)) {
+			alert(promptArr.p24);
+			return;
+		}
+		
 		if((t.top+"%"===$(".man")[0].style.top) && (t.left+"%"===$(".man")[0].style.left)) {
 			alert('you are the same point already');
 			return;
@@ -221,7 +241,9 @@ function proceed4() {
 			}
 			else if(sessionStorage.attempts==="3") {  //show help button
 				setTimeout(function() {
-					$("#prompt1").fadeIn(600);
+					$("#prompt1").fadeIn(600, function() {
+						$("#prompt1 > button:first").focus();
+					});
 				}, 1000);
 				$("#prompt1 > p").html("<br>"+promptArr.p3);
 				$("#prompt1 > p").css({'font-size': '18px', 'margin-bottom': '0px'});
@@ -236,14 +258,19 @@ function proceed4() {
 				return;
 			}
 			else if(sessionStorage.attempts==="5") { //game over after 5 tries
-				$("#prompt1").fadeIn(600);
+				extraParameters+=" Game ended at Stage1 Ques2(moving to the specified coordinates)";
+				$("#prompt1").fadeIn(600, function() {
+					$("#prompt1 > button:first").focus();
+				});
 				$("#prompt1 > p").html("<br>"+promptArr.wrongAns3);
 				$("#prompt1 > p").css({'font-size': '20px', 'margin-bottom': ''});
-				$("#prompt1 > button").hide();
 				$("#doneButton > button").hide();
-				setTimeout(function() {
-					gameEnd('Stage1 Ques2');
-				}, 1000);
+				$("#prompt1 > button").show();
+				$("#prompt1 > button > span").css('width', 'auto');
+				$("#prompt1 > button > span:first").html(miscArr.proceedButtonText5);
+				$("#prompt1 > button > span:last").html(miscArr.proceedButtonText6);
+				$("#prompt1 > button:first").attr('onclick', 'window.location.reload()');
+				$("#prompt1 > button:last").attr('onclick', "gameEnd('Stage1 Ques2(moving to the specified coordinates)')");
 			}
 		}
 		else if(t.left+"%"===$(".man")[0].style.left) {
@@ -267,7 +294,9 @@ function proceed4() {
 			}
 			else if(sessionStorage.attempts==="3") { //show help button
 				setTimeout(function() {
-					$("#prompt1").fadeIn(600);
+					$("#prompt1").fadeIn(600, function() {
+						$("#prompt1 > button:first").focus();
+					});
 				}, 1000);
 				$("#prompt1 > p").html("<br>"+promptArr.p3);
 				$("#prompt1 > p").css({'font-size': '18px', 'margin-bottom': '0px'});
@@ -282,14 +311,19 @@ function proceed4() {
 				return;
 			}
 			else if(sessionStorage.attempts==="5") { //game over after 5 tries
-				$("#prompt1").fadeIn(600);
+				extraParameters+=" Game ended at Stage1 Ques2(moving to the specified coordinates)";
+				$("#prompt1").fadeIn(600, function() {
+					$("#prompt1 > button:first").focus();
+				});
 				$("#prompt1 > p").html("<br>"+promptArr.wrongAns3);
 				$("#prompt1 > p").css({'font-size': '20px', 'margin-bottom': ''});
-				$("#prompt1 > button").hide();
 				$("#doneButton > button").hide();
-				setTimeout(function() {
-					gameEnd('Stage1 Ques2');
-				}, 1000);
+				$("#prompt1 > button").show();
+				$("#prompt1 > button > span").css('width', 'auto');
+				$("#prompt1 > button > span:first").html(miscArr.proceedButtonText5);
+				$("#prompt1 > button > span:last").html(miscArr.proceedButtonText6);
+				$("#prompt1 > button:first").attr('onclick', 'window.location.reload()');
+				$("#prompt1 > button:last").attr('onclick', "gameEnd('Stage1 Ques2(moving to the specified coordinates)')");
 			}
 		}
 		else {
@@ -310,7 +344,9 @@ function proceed5() {
 function proceed6() {
 	dropChar(charArr[3], '4');
 	$("#doneButton > button").hide();
-	$("#prompt1").fadeIn(600);
+	$("#prompt1").fadeIn(600, function() {
+		$("#prompt1 > button:first").focus();
+	});
 	$("#prompt1 > p").html("<br>"+promptArr.p4);
 	$("#prompt1 > p").css({'font-size': '20px', 'margin-bottom': ''});
 	$("#prompt1 > button:first").show();
@@ -358,7 +394,9 @@ function proceed8() {
 	if(err<=allowedError) {
 		//correct Ans
 		dropChar(charArr[4], '5');
-		$("#prompt1").fadeIn(1000);
+		$("#prompt1").fadeIn(1000, function() {
+			$("#prompt1 > button:first").focus();
+		});
 		$("#ropeLength > button").attr('onclick', 'void 0;');
 		$("#prompt1 > p").css('font-size', '20px');
 		$("#prompt1 > p").html("<br><br>"+promptArr.p4);
@@ -374,7 +412,9 @@ function proceed8() {
 		sessionStorage.wrong=parseInt(sessionStorage.wrong, 10)+1;
 		if(sessionStorage.wrong==="1") {
 			//prompt
-			$("#prompt1").fadeIn(1000);
+			$("#prompt1").fadeIn(1000, function() {
+				$("#prompt1 > button:first").focus();
+			});
 			$("#ropeLength > button").attr('onclick', 'void 0;');
 			$("#prompt1 > p").html("<br>"+promptArr.p5);
 			$("#prompt1 > p").css('font-size', '16px');
@@ -387,12 +427,19 @@ function proceed8() {
 		}
 		else {
 			//game end
-			$("#prompt1").fadeIn(1000);
+			extraParameters+=" Game ended at Stage1 Ques3(finding length)";
+			$("#prompt1").fadeIn(1000, function() {
+				$("#prompt1 > button:first").focus();
+			});
 			$("#ropeLength > button").attr('onclick', 'void 0;');
 			$("#prompt1 > p").html("<br>"+promptArr.wrongAns3);
 			$("#prompt1 > p").css('font-size', '20px');
-			$("#prompt1 > button").hide();
-			setTimeout(gameEnd('Stage1 Ques3'), 2000);
+			$("#prompt1 > button").show();
+			$("#prompt1 > button > span").css('width', 'auto');
+			$("#prompt1 > button > span:first").html(miscArr.proceedButtonText5);
+			$("#prompt1 > button > span:last").html(miscArr.proceedButtonText6);
+			$("#prompt1 > button:first").attr('onclick', 'window.location.reload()');
+			$("#prompt1 > button:last").attr('onclick', "gameEnd('Stage1 Ques3(finding length)')");
 		}
 	}
 }
@@ -486,7 +533,9 @@ function proceed14() {
 	if(value.toLowerCase()===sessionStorage.name.toLowerCase()) {
 		//correct password
 		$("#pwdInputBox > button").attr('onclick', 'void 0;');
-		$("#prompt1").fadeIn(1000);
+		$("#prompt1").fadeIn(1000, function() {
+			$("#prompt1 > button:first").focus();
+		});
 		$("#prompt1 > p").css('font-size', '20px');
 		$("#prompt1 > p").html("<br>"+promptArr.p10);
 		$("#prompt1 > button:first").show();
@@ -502,7 +551,9 @@ function proceed14() {
 		sessionStorage.wrong=parseInt(sessionStorage.wrong, 10)+1;
 		if(sessionStorage.wrong==="1") {
 			//first mistake
-			$("#prompt1").fadeIn(1000);
+			$("#prompt1").fadeIn(1000, function() {
+				$("#prompt1 > button:first").focus();
+			});
 			$("#prompt1 > p").css('font-size', '20px');
 			$("#prompt1 > p").html("<br>"+promptArr.p9);
 			$("#prompt1 > button:first").show();
@@ -513,11 +564,18 @@ function proceed14() {
 		}
 		else {
 			//game ends
-			$("#prompt1").fadeIn(1000);
+			extraParameters+=" Game ended at Stage1 Password Area";
+			$("#prompt1").fadeIn(1000, function() {
+				$("#prompt1 > button:first").focus();
+			});
 			$("#prompt1 > p").css('font-size', '20px');
 			$("#prompt1 > p").html("<br>"+promptArr.wrongAns3);
-			$("#prompt1 > button").hide();
-			setTimeout(gameEnd('Stage1 Password Area'),1000);
+			$("#prompt1 > button").show();
+			$("#prompt1 > button > span").css('width', 'auto');
+			$("#prompt1 > button > span:first").html(miscArr.proceedButtonText5);
+			$("#prompt1 > button > span:last").html(miscArr.proceedButtonText6);
+			$("#prompt1 > button:first").attr('onclick', 'window.location.reload()');
+			$("#prompt1 > button:last").attr('onclick', "gameEnd('Stage1 Password Area')");
 		}
 	}
 }
@@ -590,7 +648,8 @@ function help1() {
 		$("#yLine").show();
 		$("#help1Next > button").attr('onclick', 'void 0;');
 		$("#yLine").animate({
-			height: '98px'
+			height: '98px',
+			top: '32%'
 		}, 1000, function() {
 			$("#yNumber").fadeIn(500);
 			$("#help1Next > button").attr('onclick', 'help1Obj.step5();');
@@ -737,10 +796,10 @@ function help3() {
 function gameEnd(stage) {
 	sessionStorage.end=stage;
 	if(stage==="win") {
-		extraParameters+="";
+		extraParameters+=" Game won! ";
 	}
 	else {
-		extraParameters+=" Game ended at "+stage;
+		//extraParameters+=" Game ended at "+stage;
 	}
 	disableGridClick();
 	//alert('game ended');
@@ -878,8 +937,8 @@ function squareCalc() {
 	}
 }
 function getQuad(id) { //returns quadrant of a point given its id as #id or .class
-	var t=$(id).css('top');
-	var l=$(id).css('left');
+	var t=$(id)[0].style.top;
+	var l=$(id)[0].style.left;
 	t=t.substr(0,t.length-1);
 	l=l.substr(0,l.length-1);
 	if(t<50 && l>=50) {
@@ -965,7 +1024,9 @@ function activateClick4() { //for checking clicks on stage 1 ques 4
 		e.stopPropagation();
 		if(sessionStorage.correct===sessionStorage.reqdClicks) {
 			//win game
-			$("#prompt1").fadeIn(1000);
+			$("#prompt1").fadeIn(1000, function() {
+				$("#prompt1 > button:first").focus();
+			});
 			$("#prompt1 > p").css('font-size', '20px');
 			$("#prompt1 > p").html("<br>"+promptArr.p7);
 			$("#prompt1 > button:first").show();
@@ -993,17 +1054,24 @@ function activateClick4() { //for checking clicks on stage 1 ques 4
 		sessionStorage.attempts=parseInt(sessionStorage.attempts, 10)+1;
 		if(sessionStorage.wrong==="2") {
 			//game end (loses games)
-			$("#prompt1").fadeIn(1000);
+			extraParameters+=" Game ended at Stage1 Ques4(plotting points at specified distance)";
+			$("#prompt1").fadeIn(1000, function() {
+				$("#prompt1 > button:first").focus();
+			});
 			$("#prompt1 > p").css('font-size', '20px');
 			$("#prompt1 > p").html("<br>"+promptArr.wrongAns3);
-			$("#prompt1 > button").hide();
-			setTimeout(function() {
-				gameEnd("Stage1 Ques4");
-			}, 1200);
+			$("#prompt1 > button").show();
+			$("#prompt1 > button > span").css('width', 'auto');
+			$("#prompt1 > button > span:first").html(miscArr.proceedButtonText5);
+			$("#prompt1 > button > span:last").html(miscArr.proceedButtonText6);
+			$("#prompt1 > button:first").attr('onclick', 'window.location.reload()');
+			$("#prompt1 > button:last").attr('onclick', "gameEnd('Stage1 Ques4(plotting points at specified distance)')");
 		}
 		else {
 			//prompt for last chance
-			$("#prompt1").fadeIn(1000);
+			$("#prompt1").fadeIn(1000, function() {
+				$("#prompt1 > button:first").focus();
+			});
 			$("#prompt1 > p").css('font-size', '18px');
 			$("#prompt1 > p").html("<br>"+promptArr.p6);
 			$("#prompt1 > button:first").show();

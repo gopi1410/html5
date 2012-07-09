@@ -5,7 +5,7 @@
     <english>
         <questions>
             <que name="q1" text="There are numbers written on the stone shown below.&lt;br/&gt;Click on the points to get the codes." page="page1" voice="" />d
-            <que name="q2" text="You can move only left, right or up,down. Enter the coordinates of the points in the path you want to move to reach the red dot. You can take big steps too! :)&lt;br/&gt;You should reach the red dot in maximum two steps." page="page2" voice="" />
+            <que name="q2" text="You can move only left, right or up, down. Enter the coordinates of the points in the path you want to move to reach the red dot. You can take big steps too! :)&lt;br/&gt;You should reach the red dot in maximum two steps." page="page2" voice="" />
             <que name="q3" text="You can fetch the code at red dot from the position you are currently at, using a rope. You just need to enter the minimum length of the rope that would connect the two dots." page="page3" voice="" />
             <que name="q4_5" text="You need to click on 6 points which are 5 units away from you and are on the grid." page="page4" voice="" />
             <que name="q4_10" text="You need to click on 4 points which are 10 units away from you and are on the grid." page="page4" voice="" />
@@ -13,7 +13,7 @@
             <que name="q2_1" text="You need to make a ladder of the appropriate slope and place it so that it connects the two red dots." page="page1" voice="" />
             <que name="q2_2" text="The slope of the ladder is ___." page="page2,page4,page5" voice="" />
             <que name="q2_3" text="You need to make a ladder of the appropriate length and place it so that it connects the two red dots." page="page3" voice="" />
-            <que name="q2_6" text="You need to make a ladder of the appropriate slope and place it so that it connects the two red dots.&lt;br&gt;You need to enter value of two parameters:" page="page6" voice="" />
+            <que name="q2_6" text="You need to make a ladder of the appropriate slope and length, so that it connects the two red dots.&lt;br&gt;Enter the two parameters in the blanks below:" page="page6" voice="" />
             <que name="q3_1" text="What is the y intercept of the laser beam labeled" page="page1" voice="" />
             <que name="q3_2_1" text="Equation of one of the laser beams is" page="page2" voice="" />
             <que name="q3_2_2" text="Enter the label of the line." page="page2" voice="" />
@@ -57,10 +57,11 @@
             <prompt name="p21" text="Incorrect! If you compare the equation with the standard form y = mx + c, you get c = 0. Try again! If your answer is wrong again, you treasure hunt will end!" page="page2" voice="" />
             <prompt name="p22" text="General form of equation of line is y = mx + c, where m is the slope of the line and c is the y intercept of the line. Try again! If your answer is wrong again, you treasure hunt will end!" page="page3,page4,page5" voice="" />
             <prompt name="p23" text="Hurray! The treasure is yours!!" page="page5" voice="" />
+            <prompt name="p24" text="You are not supposed to enter the coordinates of the red dot. Please read the instructions carefully." page="page2" voice="" />
         </prompts>
         
         <instructions>
-            <instruction name="inst1" text="You need to find out codes for the password to enter the Palace" page="2" voice="" />
+            <instruction name="inst1" text="You need to find out codes for the password to enter the Palace." page="2" voice="" />
             <instruction name="ropeDecimal" text="(Enter the value up to two decimal places. You can take help of the calculator provided below.)" page="page3" voice="" />
             <instruction name="inst2_1" text="(Enter the answer upto two decimal places.)" page="page1" voice="" />
             <instruction name="inst2_2" text="(You can use the calculator given below. Enter the answer up to 2 decimal places.)" page="page2" voice="" />
@@ -76,7 +77,7 @@
         <miscellaneous>
             <misc name="title" text="Coordinate Game" page="page0" voice="" />
             <!-- no spaces should be in the names below. Just separated by a single comma but no space & should be AT LEAST 6 CHARACTERS long -->
-            <misc name="names" text="Galileo,Newton,Edison,Einstein,Archimedes,Siemens,Pythagoras,Leibniz,Euclid,Aryabhatta,Neumann,Ramanujan,Laplace,Hilbert,Riemann" page="page0" voice="" />
+            <misc name="names" text="Galileo,Newton,Edison,Archimedes,Pythagoras,Euclid,Ramanujan,Aryabhatta" page="page0" voice="" />
             <misc name="frontpageHeader" text="TREASURE HUNT" page="page1" voice="" />
             <misc name="frontpageText" text="&lt;p&gt;There is a treasure in a palace. You need to crack a few codes to reach the treasure. There are three stages in the game.&lt;/p&gt;&lt;p&gt;Stage I: The Garden&lt;/p&gt;&lt;p&gt;Stage II: The Palace&lt;/p&gt;&lt;p&gt;Stage III: The Royal Treasury&lt;/p&gt;&lt;p&gt;Your mission starts when you enter the garden in front of the palace.&lt;/p&gt;" page="page1" voice="" />
             <misc name="startButtonText" text="START" page="page1" voice="" />
@@ -84,11 +85,13 @@
             <misc name="proceedButtonText2" text="PROCEED" page="page1" voice="" />
             <misc name="proceedButtonText3" text="NEXT" page="page1" voice="" />
             <misc name="proceedButtonText4" text="DONE" page="page1" voice="" />
+            <misc name="proceedButtonText5" text="RESTART" page="page1" voice="" />
+            <misc name="proceedButtonText6" text="QUIT" page="page1" voice="" />
             <misc name="helpText" text="HELP" page="page1" voice="" />
             <misc name="positiveText" text="Positive" page="page2" voice="" />
             <misc name="negativeText" text="Negative" page="page2" voice="" />
             <misc name="stage2Header" text="The Palace" page="page1" voice="" />
-            <misc name="stage2Text" text="There are levels in the palace and you can go to the next level using the ladders. To climb each ladder, you will have to find the answer to the question attached to the ladder.Here you go…!!! :)" page="page1" voice="" />
+            <misc name="stage2Text" text="There are levels in the palace and you can go to the next level using the ladders. To climb each ladder, you will have to find the answer to the question attached to the ladder. Here you go…!!! :)" page="page1" voice="" />
             <misc name="inputText1" text="Slope: " page="page1" voice="" />
             <misc name="inputText2" text="Length: " page="page2" voice="" />
             <misc name="stage3Header" text="The Royal Treasury" page="page1" voice="" />

@@ -147,3 +147,16 @@
 	margin-left: 10px;
 	margin-top: 10px;
 }
+#cloud2 {
+	position: absolute;
+	display: none;
+	z-index: 50;
+}
+#cloud2 img {
+	position: absolute;
+	width: 100px;
+}
+#cloud2 p {
+	position: absolute;
+	width: 100px;
+}

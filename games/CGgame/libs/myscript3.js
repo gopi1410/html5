@@ -5,6 +5,9 @@ function proceed3_1() {
     $("#main3 > h1").html(miscArr.stage3Header);
     $("#main3 > p").html(miscArr.stage3Text);
     $("#startButton3 > button > span").html(miscArr.startButtonText);
+    setTimeout(function() {
+        $("#startButton3 > button").focus();
+    }, 1000);
     sessionStorage.correct=0;
     sessionStorage.wrong=0;
     sessionStorage.attempts=0;
@@ -26,26 +29,39 @@ function proceed3_3() {
     if(enteredVal===interceptArr[0]) {
         sessionStorage.correct=parseInt(sessionStorage.correct, 10)+1;
         sessionStorage.attempts=parseInt(sessionStorage.attempts, 10)+1;
-        $("#prompt3").fadeIn(1000);
+        $("#prompt3").fadeIn(1000, function() {
+            $("#prompt3 > button:first").focus();
+        });
+        $("#prompt3 > button:last").hide();
         $("#prompt3 > p").html('<br><br>'+promptArr.p16);
-        $("#prompt3 > button").attr('onclick', 'proceed3_4();');
+        $("#prompt3 > button:first").attr('onclick', 'proceed3_4();');
     }
     else {
         sessionStorage.wrong=parseInt(sessionStorage.wrong, 10)+1;
         sessionStorage.attempts=parseInt(sessionStorage.attempts, 10)+1;
         if(sessionStorage.wrong==="1") {
             //give one more chance
-            $("#prompt3").fadeIn(1000);
+            $("#prompt3").fadeIn(1000, function() {
+                $("#prompt3 > button:first").focus();
+            });
             $("#prompt3 > p").html('<br>'+promptArr.p20);
-            $("#prompt3 > button").show();
-            $("#prompt3 > button").attr('onclick', 'hidePrompt();');
+            $("#prompt3 > button:first").show();
+            $("#prompt3 > button:last").hide();
+            $("#prompt3 > button:first").attr('onclick', 'hidePrompt();');
         }
         else if(sessionStorage.wrong==="2") {
             //game end
-            $("#prompt3").fadeIn(1000);
+            extraParameters+=" Game ended at Stage3 Ques1(calculating y-intercept)";
+            $("#prompt3").fadeIn(1000, function() {
+                $("#prompt3 > button:first").focus();
+            });
             $("#prompt3 > p").html('<br><br>'+promptArr.wrongAns3);
-            $("#prompt3 > button").hide();
-            gameEnd("Stage3 Ques1");
+            $("#prompt3 > button").show();
+            $("#prompt3 > button > span").css('width', 'auto');
+            $("#prompt3 > button > span:first").html(miscArr.proceedButtonText5);
+            $("#prompt3 > button > span:last").html(miscArr.proceedButtonText6);
+            $("#prompt3 > button:first").attr('onclick', 'window.location.reload()');
+            $("#prompt3 > button:last").attr('onclick', 'gameEnd("Stage3 Ques1(calculating y-intercept)")');
         }
     }
 }
@@ -75,26 +91,39 @@ function proceed3_5() {
     if(enteredVal===labelArr[1]) {
         sessionStorage.correct=parseInt(sessionStorage.correct, 10)+1;
         sessionStorage.attempts=parseInt(sessionStorage.attempts, 10)+1;
-        $("#prompt3").fadeIn(1000);
+        $("#prompt3").fadeIn(1000, function() {
+            $("#prompt3 > button:first").focus();
+        });
         $("#prompt3 > p").html('<br><br>'+promptArr.p17);
-        $("#prompt3 > button").attr('onclick', 'proceed3_6();');
+        $("#prompt3 > button:last").hide();
+        $("#prompt3 > button:first").attr('onclick', 'proceed3_6();');
     }
     else {
         sessionStorage.wrong=parseInt(sessionStorage.wrong, 10)+1;
         sessionStorage.attempts=parseInt(sessionStorage.attempts, 10)+1;
         if(sessionStorage.wrong==="1") {
             //give one more chance
-            $("#prompt3").fadeIn(1000);
+            $("#prompt3").fadeIn(1000, function() {
+                $("#prompt3 > button:first").focus();
+            });
             $("#prompt3 > p").html('<br>'+promptArr.p21);
-            $("#prompt3 > button").show();
-            $("#prompt3 > button").attr('onclick', 'hidePrompt();');
+            $("#prompt3 > button:first").show();
+            $("#prompt3 > button:last").hide();
+            $("#prompt3 > button:first").attr('onclick', 'hidePrompt();');
         }
         else if(sessionStorage.wrong==="2") {
             //game end
-            $("#prompt3").fadeIn(1000);
+            extraParameters+=" Game ended at Stage3 Ques2(identifying line given its equation)";
+            $("#prompt3").fadeIn(1000, function() {
+                $("#prompt3 > button:first").focus();
+            });
             $("#prompt3 > p").html('<br><br>'+promptArr.wrongAns3);
-            $("#prompt3 > button").hide();
-            gameEnd("Stage3 Ques2");
+            $("#prompt3 > button").show();
+            $("#prompt3 > button > span").css('width', 'auto');
+            $("#prompt3 > button > span:first").html(miscArr.proceedButtonText5);
+            $("#prompt3 > button > span:last").html(miscArr.proceedButtonText6);
+            $("#prompt3 > button:first").attr('onclick', 'window.location.reload()');
+            $("#prompt3 > button:last").attr('onclick', 'gameEnd("Stage3 Ques2(identifying line given its equation)")');
         }
     }
 }
@@ -111,49 +140,63 @@ function proceed3_6() {
     $("#ansArea > button").attr('onclick', 'proceed3_7();');
     $("#ansArea > input").remove();
     $("#ansArea > #ansInput").show();
-    $("#ansInput > input:eq(0)").focus();
+    $("#ansInput select:first").css('width', '38px');
+    /*$("#ansInput > input:eq(0)").focus();
     $("#ansInput > input:eq(0)").attr('onkeydown', 'handleKeyPress(window.event,0);');
     $("#ansInput > input:eq(0)").attr('onkeyup', 'handleKeyUp(window.event,0);');
     $("#ansInput > input:eq(1)").attr('onkeydown', 'handleKeyPress(window.event,1);');
     $("#ansInput > input:eq(1)").attr('onkeyup', 'handleKeyUp(window.event,1);');
     $("#ansInput > input:eq(2)").attr('onkeydown', 'handleKeyPress(window.event,2);');
-    $("#ansInput > input:eq(2)").attr('onkeyup', 'handleKeyUp(window.event,2);');
+    $("#ansInput > input:eq(2)").attr('onkeyup', 'handleKeyUp(window.event,2);');*/
     $("#quesArea > p").html(quesArr.q3_3+" "+slopeArr[2]);
     sessionStorage.correct=0;
     sessionStorage.wrong=0;
     sessionStorage.attempts=0;
 }
 function proceed3_7() {
-    if($.trim($("#ansInput > input:eq(0)").val())==="" || $.trim($("#ansInput > input:eq(1)").val())==="" || $.trim($("#ansInput > input:eq(2)").val())==="") {
+    if($.trim($("#ansInput > select:eq(0)").val())==="" || $.trim($("#ansInput > select:eq(1)").val())==="" || $.trim($("#ansInput > select:eq(2)").val())==="") {
         return;
     }
-    var enteredVal1=$("#ansInput > input:eq(0)").val();
-    var enteredVal2=$("#ansInput > input:eq(1)").val();
-    var enteredVal3=$("#ansInput > input:eq(2)").val();
+    var enteredVal1=$("#ansInput > select:eq(0)").val();
+    var enteredVal2=$("#ansInput > select:eq(1)").val();
+    var enteredVal3=$("#ansInput > select:eq(2)").val();
     var sign=(interceptArr[2]>0) ? '+' : '-';
     if((enteredVal1==slopeArr[2]) && (enteredVal2===sign) && (enteredVal3==Math.abs(interceptArr[2]))) {
         sessionStorage.correct=parseInt(sessionStorage.correct, 10)+1;
         sessionStorage.attempts=parseInt(sessionStorage.attempts, 10)+1;
-        $("#prompt3").fadeIn(1000);
+        $("#prompt3").fadeIn(1000, function() {
+            $("#prompt3 > button:first").focus();
+        });
         $("#prompt3 > p").html('<br><br>'+promptArr.p18);
-        $("#prompt3 > button").attr('onclick', 'proceed3_8();');
+        $("#prompt3 > button:last").hide();
+        $("#prompt3 > button:first").attr('onclick', 'proceed3_8();');
     }
     else {
         sessionStorage.wrong=parseInt(sessionStorage.wrong, 10)+1;
         sessionStorage.attempts=parseInt(sessionStorage.attempts, 10)+1;
         if(sessionStorage.wrong==="1") {
             //give one more chance
-            $("#prompt3").fadeIn(1000);
+            $("#prompt3").fadeIn(1000, function() {
+                $("#prompt3 > button:first").focus();
+            });
             $("#prompt3 > p").html('<br>'+promptArr.p22);
-            $("#prompt3 > button").show();
-            $("#prompt3 > button").attr('onclick', 'hidePrompt();');
+            $("#prompt3 > button:first").show();
+            $("#prompt3 > button:last").hide();
+            $("#prompt3 > button:first").attr('onclick', 'hidePrompt();');
         }
         else if(sessionStorage.wrong==="2") {
             //game end
-            $("#prompt3").fadeIn(1000);
+            extraParameters+=" Game ended at Stage3 Ques3(writing equation of line)";
+            $("#prompt3").fadeIn(1000, function() {
+                $("#prompt3 > button:first").focus();
+            });
             $("#prompt3 > p").html('<br><br>'+promptArr.wrongAns3);
-            $("#prompt3 > button").hide();
-            gameEnd("Stage3 Ques3");
+            $("#prompt3 > button").show();
+            $("#prompt3 > button > span").css('width', 'auto');
+            $("#prompt3 > button > span:first").html(miscArr.proceedButtonText5);
+            $("#prompt3 > button > span:last").html(miscArr.proceedButtonText6);
+            $("#prompt3 > button:first").attr('onclick', 'window.location.reload()');
+            $("#prompt3 > button:last").attr('onclick', 'gameEnd("Stage3 Ques3(writing equation of line)")');
         }
     }
 }
@@ -168,44 +211,57 @@ function proceed3_8() {
     });
     //change question
     $("#ansArea > button").attr('onclick', 'proceed3_9();');
-    $("#ansInput > input").val('');
-    $("#ansInput > input:eq(0)").focus();
+    $("#ansInput > select").val('');
+    $("#ansInput > select:eq(0)").focus();
     $("#quesArea > p").html(quesArr.q3_4+" "+interceptArr[3]);
     sessionStorage.correct=0;
     sessionStorage.wrong=0;
     sessionStorage.attempts=0;
 }
 function proceed3_9() {
-    if($.trim($("#ansInput > input:eq(0)").val())==="" || $.trim($("#ansInput > input:eq(1)").val())==="" || $.trim($("#ansInput > input:eq(2)").val())==="") {
+    if($.trim($("#ansInput > select:eq(0)").val())==="" || $.trim($("#ansInput > select:eq(1)").val())==="" || $.trim($("#ansInput > select:eq(2)").val())==="") {
         return;
     }
-    var enteredVal1=$("#ansInput > input:eq(0)").val();
-    var enteredVal2=$("#ansInput > input:eq(1)").val();
-    var enteredVal3=$("#ansInput > input:eq(2)").val();
+    var enteredVal1=$("#ansInput > select:eq(0)").val();
+    var enteredVal2=$("#ansInput > select:eq(1)").val();
+    var enteredVal3=$("#ansInput > select:eq(2)").val();
     var sign=(interceptArr[3]>0) ? '+' : '-';
     if((enteredVal1==slopeArr[3]) && (enteredVal2===sign) && (enteredVal3==Math.abs(interceptArr[3]))) {
         sessionStorage.correct=parseInt(sessionStorage.correct, 10)+1;
         sessionStorage.attempts=parseInt(sessionStorage.attempts, 10)+1;
-        $("#prompt3").fadeIn(1000);
+        $("#prompt3").fadeIn(1000, function() {
+            $("#prompt3 > button:first").focus();
+        });
         $("#prompt3 > p").html('<br><br>'+promptArr.p19);
-        $("#prompt3 > button").attr('onclick', 'proceed3_10();');
+        $("#prompt3 > button:last").hide();
+        $("#prompt3 > button:first").attr('onclick', 'proceed3_10();');
     }
     else {
         sessionStorage.wrong=parseInt(sessionStorage.wrong, 10)+1;
         sessionStorage.attempts=parseInt(sessionStorage.attempts, 10)+1;
         if(sessionStorage.wrong==="1") {
             //give one more chance
-            $("#prompt3").fadeIn(1000);
+            $("#prompt3").fadeIn(1000, function() {
+                $("#prompt3 > button:first").focus();
+            });
             $("#prompt3 > p").html('<br>'+promptArr.p22);
-            $("#prompt3 > button").show();
-            $("#prompt3 > button").attr('onclick', 'hidePrompt();');
+            $("#prompt3 > button:first").show();
+            $("#prompt3 > button:last").hide();
+            $("#prompt3 > button:first").attr('onclick', 'hidePrompt();');
         }
         else if(sessionStorage.wrong==="2") {
             //game end
-            $("#prompt3").fadeIn(1000);
+            extraParameters+=" Game ended at Stage3 Ques4(writing equation of line)";
+            $("#prompt3").fadeIn(1000, function() {
+                $("#prompt3 > button:first").focus();
+            });
             $("#prompt3 > p").html('<br><br>'+promptArr.wrongAns3);
-            $("#prompt3 > button").hide();
-            gameEnd("Stage3 Ques4");
+            $("#prompt3 > button").show();
+            $("#prompt3 > button > span").css('width', 'auto');
+            $("#prompt3 > button > span:first").html(miscArr.proceedButtonText5);
+            $("#prompt3 > button > span:last").html(miscArr.proceedButtonText6);
+            $("#prompt3 > button:first").attr('onclick', 'window.location.reload()');
+            $("#prompt3 > button:last").attr('onclick', 'gameEnd("Stage3 Ques4(writing equation of line)")');
         }
     }
 }
@@ -220,44 +276,57 @@ function proceed3_10() {
     });
     //change question
     $("#ansArea > button").attr('onclick', 'proceed3_11();');
-    $("#ansInput > input").val('');
-    $("#ansInput > input:eq(0)").focus();
+    $("#ansInput > select").val('');
+    $("#ansInput > select:eq(0)").focus();
     $("#quesArea > p").html(quesArr.q3_5);
     sessionStorage.correct=0;
     sessionStorage.wrong=0;
     sessionStorage.attempts=0;
 }
 function proceed3_11() {
-    if($.trim($("#ansInput > input:eq(0)").val())==="" || $.trim($("#ansInput > input:eq(1)").val())==="" || $.trim($("#ansInput > input:eq(2)").val())==="") {
+    if($.trim($("#ansInput > select:eq(0)").val())==="" || $.trim($("#ansInput > select:eq(1)").val())==="" || $.trim($("#ansInput > select:eq(2)").val())==="") {
         return;
     }
-    var enteredVal1=$("#ansInput > input:eq(0)").val();
-    var enteredVal2=$("#ansInput > input:eq(1)").val();
-    var enteredVal3=$("#ansInput > input:eq(2)").val();
+    var enteredVal1=$("#ansInput > select:eq(0)").val();
+    var enteredVal2=$("#ansInput > select:eq(1)").val();
+    var enteredVal3=$("#ansInput > select:eq(2)").val();
     var sign=(interceptArr[4]>0) ? '+' : '-';
     if((enteredVal1==slopeArr[4]) && (enteredVal2===sign) && (enteredVal3==Math.abs(interceptArr[4]))) {
         sessionStorage.correct=parseInt(sessionStorage.correct, 10)+1;
         sessionStorage.attempts=parseInt(sessionStorage.attempts, 10)+1;
-        $("#prompt3").fadeIn(1000);
+        $("#prompt3").fadeIn(1000, function() {
+            $("#prompt3 > button:first").focus();
+        });
         $("#prompt3 > p").html('<br><br>'+promptArr.p23);
-        $("#prompt3 > button").attr('onclick', 'proceed3_12();');
+        $("#prompt3 > button:last").hide();
+        $("#prompt3 > button:first").attr('onclick', 'proceed3_12();');
     }
     else {
         sessionStorage.wrong=parseInt(sessionStorage.wrong, 10)+1;
         sessionStorage.attempts=parseInt(sessionStorage.attempts, 10)+1;
         if(sessionStorage.wrong==="1") {
             //give one more chance
-            $("#prompt3").fadeIn(1000);
+            $("#prompt3").fadeIn(1000, function() {
+                $("#prompt3 > button:first").focus();
+            });
             $("#prompt3 > p").html('<br>'+promptArr.p22);
-            $("#prompt3 > button").show();
-            $("#prompt3 > button").attr('onclick', 'hidePrompt();');
+            $("#prompt3 > button:first").show();
+            $("#prompt3 > button:last").hide();
+            $("#prompt3 > button:first").attr('onclick', 'hidePrompt();');
         }
         else if(sessionStorage.wrong==="2") {
             //game end
-            $("#prompt3").fadeIn(1000);
+            extraParameters+=" Game ended at Stage3 Ques5(writing equation of line)";
+            $("#prompt3").fadeIn(1000, function() {
+                $("#prompt3 > button:first").focus();
+            });
             $("#prompt3 > p").html('<br><br>'+promptArr.wrongAns3);
-            $("#prompt3 > button").hide();
-            gameEnd("Stage3 Ques5");
+            $("#prompt3 > button").show();
+            $("#prompt3 > button > span").css('width', 'auto');
+            $("#prompt3 > button > span:first").html(miscArr.proceedButtonText5);
+            $("#prompt3 > button > span:last").html(miscArr.proceedButtonText6);
+            $("#prompt3 > button:first").attr('onclick', 'window.location.reload()');
+            $("#prompt3 > button:last").attr('onclick', 'gameEnd("Stage3 Ques5(writing equation of line)")');
         }
     }
 }
